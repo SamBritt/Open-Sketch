@@ -1,0 +1,66 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "userName": "Sagora",
+            "password": "lkjlkjh55"
+        },
+        {
+            "id": 2,
+            "userName": "JackDraws",
+            "password": "admin"
+        }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "userId": 1,
+            "currentUserId": 2
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "currentUserId": 1
+        }
+    ],
+    "images": [
+        {
+            "id": 1,
+            "userId": 2,
+            "categoryId": 1,
+            "name": "Sketch of John",
+            "imageUrl": "",
+            "lessonsLearned": ""
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "categoryId": 2,
+            "name": "Woman Torso",
+            "imageUrl": "",
+            "lessonsLearned": ""
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "categoryId": 2,
+            "name": "Man Torso",
+            "imageUrl": "",
+            "lessonsLearned": ""
+        }
+    ],
+    "category": [
+        {
+            "id": 1,
+            "categoryName": "Faces"
+        },
+        {
+            "id": 2,
+            "categoryName": "Torsos"
+        },
+        {
+            "id": 3,
+            "categoryName": "Feet"
+        }
+    ]
+}
