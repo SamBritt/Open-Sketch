@@ -1,5 +1,5 @@
 {
-    "user": [
+    "users": [
         {
             "id": 1,
             "userName": "Sagora",
@@ -49,7 +49,7 @@
             "lessonsLearned": ""
         }
     ],
-    "category": [
+    "categories": [
         {
             "id": 1,
             "categoryName": "Faces"
