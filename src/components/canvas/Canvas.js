@@ -14,17 +14,7 @@ export default class Canvas extends Component {
     render() {
         return (
             <React.Fragment>
-                <label>Width:</label>
-                <input
-                    type="number"
-                    value={this.state.width}
-                    onChange={e => {
-                        console.log(e.target.value)
-                        this.setState({ width: parseInt(e.target.value, 10) })
-                    }
-                    }
-                />
-                <CanvasDraw canvasWidth={this.state.width} />
+                <CanvasDraw />
             </React.Fragment>
         )
     }
