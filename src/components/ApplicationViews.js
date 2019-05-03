@@ -83,6 +83,7 @@ export default class ApplicationViews extends Component {
                 }} />
                 <Route path="/profile" render={props => {
                     return <Profile {...props}
+                        images = {this.state.images}
                         categories={this.state.categories}
                         saveDrawing={this.saveDrawing}
                         saveDrawing2={this.saveDrawing2} />
