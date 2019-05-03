@@ -1,66 +1,73 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "userName": "Sagora",
-            "password": "lkjlkjh55"
-        },
-        {
-            "id": 2,
-            "userName": "JackDraws",
-            "password": "admin"
-        }
-    ],
-    "friends": [
-        {
-            "id": 1,
-            "userId": 1,
-            "currentUserId": 2
-        },
-        {
-            "id": 2,
-            "userId": 2,
-            "currentUserId": 1
-        }
-    ],
-    "images": [
-        {
-            "id": 1,
-            "userId": 2,
-            "categoryId": 1,
-            "name": "Sketch of John",
-            "imageUrl": "",
-            "lessonsLearned": ""
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "categoryId": 2,
-            "name": "Woman Torso",
-            "imageUrl": "",
-            "lessonsLearned": ""
-        },
-        {
-            "id": 3,
-            "userId": 1,
-            "categoryId": 2,
-            "name": "Man Torso",
-            "imageUrl": "",
-            "lessonsLearned": ""
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "categoryName": "Faces"
-        },
-        {
-            "id": 2,
-            "categoryName": "Torsos"
-        },
-        {
-            "id": 3,
-            "categoryName": "Feet"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "userName": "Sagora",
+      "password": "lkjlkjh55"
+    },
+    {
+      "id": 2,
+      "userName": "JackDraws",
+      "password": "admin"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": 1,
+      "currentUserId": 2
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "currentUserId": 1
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "userId": 2,
+      "categoryId": 1,
+      "name": "Sketch of John",
+      "imageUrl": "",
+      "lessonsLearned": ""
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "categoryId": 2,
+      "name": "Woman Torso",
+      "imageUrl": "",
+      "lessonsLearned": ""
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "categoryId": 2,
+      "name": "Man Torso",
+      "imageUrl": "",
+      "lessonsLearned": ""
+    },
+    {
+      "categoryId": 1,
+      "name": "Smiley Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.518221557760131?alt=media&token=42643041-1212-4502-9c1f-5c176f682646",
+      "lessonsLearned": "Absolutely Nothing",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Faces"
+    },
+    {
+      "id": 2,
+      "categoryName": "Torsos"
+    },
+    {
+      "id": 3,
+      "categoryName": "Feet"
+    }
+  ]
 }

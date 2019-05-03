@@ -5,7 +5,7 @@ import TestFetch from './TestFetch'
 import Canvas from './canvas/Canvas'
 import FriendsList from './friends/FriendsList';
 import Profile from './profile/Profile';
-
+import ApiManager from '../modules/ApiManager'
 
 export default class ApplicationViews extends Component {
     state = {
@@ -16,12 +16,32 @@ export default class ApplicationViews extends Component {
         url: ''
 
     }
+    componentDidMount() {
+        const newState = {
 
-    handleUploadFile = (event) => {
-        if (event.target.files[0]) {
-            const image = event.target.files[0]
+        }
+        ApiManager.getAll("users")
+            .then(users => newState.users = users)
+            .then(() => ApiManager.getAll("friends"))
+            .then(friends => newState.friends = friends)
+            .then(() => ApiManager.getAll("images"))
+            .then(images => newState.images = images)
+            .then(() => ApiManager.getAll("categories"))
+            .then(categories => newState.categories = categories)
+            .then(() => this.setState(newState))
+    }
 
-            const uploadTask = storage.ref(`images/${image.name}`).put(image)
+    saveDrawing = (name, lessonsLearned, categoryId) => {
+        //Generates a random number to ensure no 2 images are named the same in Firebase Storage
+        let rand = Math.random();
+        //Gets the 2nd Layer of CanvasDraw Component (drawing layer) and convverts it to a blob
+        let canvasImage = document.querySelectorAll('canvas');
+        canvasImage = canvasImage[1]
+        canvasImage.toBlob(blob => {
+            let image = new Image();
+            image.src = blob;
+            //Stores image to firebase
+            const uploadTask = storage.ref(`images/${rand}`).put(blob)
             uploadTask.on("state_changed",
                 (snapshot) => {
                     console.log(snapshot)
@@ -30,17 +50,31 @@ export default class ApplicationViews extends Component {
                     console.log(error)
                 },
                 () => {
-                    storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                        console.log(url)
-                        this.setState({ url })
+                    //Creates a new object used to post to our local JSON server.
+                    //Uses url returned from posting to Firebase
+                    //Put that url reference in the imageUrl key.
+                    storage.ref('images').child(`${rand}`).getDownloadURL().then(url => {
+                        const newObj = {
+                            categoryId: Number(categoryId),
+                            name: name,
+                            imageUrl: url,
+                            lessonsLearned: lessonsLearned
+
+                        }
+                        //Call to post to JSON
+                        this.saveDrawing2(newObj)
                     })
                 }
             )
-        }
-
+        })
     }
-
-
+    saveDrawing2 = (newDrawing) => {
+        return ApiManager.postEntry(newDrawing, "images")
+            .then(() => ApiManager.getAll("images"))
+            .then(images => {
+                this.setState({ images: images })
+            })
+    }
     render() {
         return (
             <React.Fragment>
@@ -48,7 +82,10 @@ export default class ApplicationViews extends Component {
                     return <FriendsList />
                 }} />
                 <Route path="/profile" render={props => {
-                    return <Profile />
+                    return <Profile {...props}
+                        categories={this.state.categories}
+                        saveDrawing={this.saveDrawing}
+                        saveDrawing2={this.saveDrawing2} />
                 }} />
                 <Route path="/friends" render={props => {
                     return <FriendsList />
