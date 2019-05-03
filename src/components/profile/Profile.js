@@ -16,7 +16,7 @@ export default class Profile extends Component {
         return (
             <React.Fragment>
                 <button onClick = {this.revealCanvas}>Create New Sketch</button>
-                {this.state.showCanvas ? <Canvas /> : null}
+                {this.state.showCanvas ? <Canvas ref = "canvasRef" categories = {this.props.categories}{...this.props}/> : null}
             </React.Fragment>
         )
     }
