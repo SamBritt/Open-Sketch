@@ -65,6 +65,41 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.14076051612750096?alt=media&token=1d94df7d-f7b7-4d6a-975c-5bb64af5c395",
       "lessonsLearned": "Nothing",
       "id": 10
+    },
+    {
+      "categoryId": 1,
+      "name": "Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21015162833694467?alt=media&token=5b8f5913-49c4-43c8-9bc7-ab2bad3946fb",
+      "lessonsLearned": "This is challenging",
+      "id": 11
+    },
+    {
+      "categoryId": 1,
+      "name": "Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.10925139940205364?alt=media&token=b7023396-b1a2-40f5-a62a-769de42f3f3c",
+      "lessonsLearned": "Nothing",
+      "id": 12
+    },
+    {
+      "categoryId": 1,
+      "name": "Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.35640457405947834?alt=media&token=f9c43bc0-70e4-4b98-8686-8027f1b61f62",
+      "lessonsLearned": "Nothing",
+      "id": 13
+    },
+    {
+      "categoryId": 1,
+      "name": "Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6667458256258016?alt=media&token=68892145-1bf1-4f10-a9dc-2aa6f7746fe7",
+      "lessonsLearned": "Nothing",
+      "id": 14
+    },
+    {
+      "categoryId": 1,
+      "name": "Eye",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.002923883266871208?alt=media&token=7c175367-e5f1-4186-bbeb-db54565c5dd2",
+      "lessonsLearned": "Nothing",
+      "id": 15
     }
   ],
   "categories": [
