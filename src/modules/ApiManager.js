@@ -1,9 +1,13 @@
 const baseURL = "http://localhost:8088"
 
 const API = {
-    getAll(path){
-        return fetch(`${baseURL}/${path}`)
+    getAll(path, userId){
+        return fetch(`${baseURL}/${path}?userId=${userId}`)
         .then(e => e.json())
+    },
+    getAllUsers(){
+        return fetch(`${baseURL}/users`)
+        .then(e => e.json()) 
     },
     getOne(path, id){
         return fetch(`${baseURL}/${path}/${id}`)

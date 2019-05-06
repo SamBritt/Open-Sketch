@@ -24,17 +24,21 @@ export default class Profile extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.props.images.map(image =>
-                    <div key = {image.id} className="card">
-                        <img src={image.imageUrl} alt="Image"/>
-                        <div className="container">
-                            <h4>{image.name}</h4>
-                            <p>{image.lessonsLearned}</p>
-                            <button onClick = {() => this.handleDelete(image)}>Delete</button>
+                <div>
+                    <button onClick={this.revealCanvas}>Create New Sketch</button>
+                </div>
+                <div className="wrapper">
+                    {this.props.images.map(image =>
+                        <div key={image.id} className="card">
+                            <img src={image.imageUrl} alt="Image" />
+                            <div className="container">
+                                <h4>{image.name}</h4>
+                                <p>{image.lessonsLearned}</p>
+                                <button onClick={() => this.handleDelete(image)}>Delete</button>
+                            </div>
                         </div>
-                    </div>
-                )}
-                <button onClick={this.revealCanvas}>Create New Sketch</button>
+                    )}
+                </div>
                 {this.state.showCanvas ? <Canvas ref="canvasRef" categories={this.props.categories}{...this.props} /> : null}
             </React.Fragment>
         )

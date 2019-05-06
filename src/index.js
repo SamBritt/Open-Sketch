@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from "react-router-dom"
 import OpenSketch from './components/OpenSketch'
 import CanvasDraw from "react-canvas-draw";
 
-
-import TestFetch from './components/TestFetch'
 import ApplicationViews from './components/ApplicationViews';
 
 ReactDOM.render(

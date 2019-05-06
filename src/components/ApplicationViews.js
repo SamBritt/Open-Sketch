@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from "react-router-dom"
 import { storage } from '../config/FireBaseConfig'
-import TestFetch from './TestFetch'
 import Canvas from './canvas/Canvas'
 import FriendsList from './friends/FriendsList';
 import Profile from './profile/Profile';
 import ApiManager from '../modules/ApiManager'
+import Login from './login/Login'
+import Register from './login/Register'
 
 export default class ApplicationViews extends Component {
     state = {
@@ -13,23 +14,46 @@ export default class ApplicationViews extends Component {
         friends: [],
         images: [],
         categories: [],
-        url: ''
+        userId: ""
 
     }
     componentDidMount() {
+        let currentUserId = sessionStorage.getItem("userID")
+        this.loadAllData(currentUserId)
+    }
+
+    loadAllData = (currentUserId) => {
+
         const newState = {
 
         }
-        ApiManager.getAll("users")
+
+        ApiManager.getAllUsers()
             .then(users => newState.users = users)
-            .then(() => ApiManager.getAll("friends"))
+            .then(() => ApiManager.getAll("friends", currentUserId))
             .then(friends => newState.friends = friends)
-            .then(() => ApiManager.getAll("images"))
+            .then(() => ApiManager.getAll("images", currentUserId))
             .then(images => newState.images = images)
-            .then(() => ApiManager.getAll("categories"))
+            .then(() => ApiManager.getAll("categories", currentUserId))
             .then(categories => newState.categories = categories)
             .then(() => this.setState(newState))
     }
+
+    onLogin = () => {
+        this.setState({
+            userId: sessionStorage.getItem("userID")
+        })
+        this.loadAllData(this.state.userId)
+    }
+    registerUser = (userToRegister) => {
+        return ApiManager.postEntry(userToRegister, "users")
+            .then(() => ApiManager.getAllUsers())
+            .then(users => this.setState({
+                users: users
+            }))
+    }
+
+    isAuthenticated = () => sessionStorage.getItem("userID") !== null
 
     saveDrawing = (name, lessonsLearned, categoryId) => {
         //Generates a random number to ensure no 2 images are named the same in Firebase Storage
@@ -83,11 +107,11 @@ export default class ApplicationViews extends Component {
         imageRef.delete().then(() => {
             //Then deletes JSON Object containing that URL.
             return ApiManager.deleteEntry("images", id)
-            .then(() => ApiManager.getAll("images"))
-            .then(images => {
-                //Updates state with images minus the one deleted
-                this.setState({images: images})
-            })
+                .then(() => ApiManager.getAll("images"))
+                .then(images => {
+                    //Updates state with images minus the one deleted
+                    this.setState({ images: images })
+                })
         }).catch((error) => {
             console.log(error)
         })
@@ -97,8 +121,15 @@ export default class ApplicationViews extends Component {
         return (
             <React.Fragment>
                 <Route exact path="/" render={props => {
-                    return <FriendsList />
+                    return <Login users={this.state.users}
+                        onLogin={this.onLogin}{...props} />
                 }} />
+                <Route exact path="/register" render={props => {
+                        return <Register users={this.state.users}
+                            registerUser={this.registerUser} onLogin={this.onLogin} {...props} />
+
+                    }}
+                />
                 <Route path="/profile" render={props => {
                     return <Profile {...props}
                         images={this.state.images}
