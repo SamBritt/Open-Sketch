@@ -12,6 +12,14 @@ export default class Profile extends Component {
             showCanvas: true
         })
     }
+    handleDelete = (event) => {
+        //Get URL and id stored in JSON, pass to deleteDrawing() function
+        let urlToDelete = event.imageUrl
+        let imageId = event.id
+
+        this.props.deleteDrawing(urlToDelete, imageId)
+
+    }
 
     render() {
         return (
@@ -22,6 +30,7 @@ export default class Profile extends Component {
                         <div className="container">
                             <h4>{image.name}</h4>
                             <p>{image.lessonsLearned}</p>
+                            <button onClick = {() => this.handleDelete(image)}>Delete</button>
                         </div>
                     </div>
                 )}

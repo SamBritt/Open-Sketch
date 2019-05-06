@@ -25,20 +25,6 @@
   ],
   "images": [
     {
-      "categoryId": 1,
-      "name": "Squiqqly",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.7261341314020211?alt=media&token=748ab863-9eb5-41d9-81b1-b57a1d26e974",
-      "lessonsLearned": "Nothing",
-      "id": 5
-    },
-    {
-      "categoryId": 1,
-      "name": "Double Squiggley",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6672808555191945?alt=media&token=4a0139b6-fcc7-4497-b352-22999a39ea90",
-      "lessonsLearned": "Nothing Really",
-      "id": 6
-    },
-    {
       "categoryId": 2,
       "name": "Quick Chest",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.19808073019660521?alt=media&token=e78cf52a-8e81-4629-8b60-2a68ef412293",
@@ -58,13 +44,6 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6201241687540509?alt=media&token=0a788c41-f143-4897-987d-7c4926e5026a",
       "lessonsLearned": "Nothing",
       "id": 9
-    },
-    {
-      "categoryId": 0,
-      "name": "Lines",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.14076051612750096?alt=media&token=1d94df7d-f7b7-4d6a-975c-5bb64af5c395",
-      "lessonsLearned": "Nothing",
-      "id": 10
     },
     {
       "categoryId": 1,

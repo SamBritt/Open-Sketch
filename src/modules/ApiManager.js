@@ -17,6 +17,11 @@ const API = {
             },
             body: JSON.stringify(obj)
         }).then(e => e.json())
+    },
+    deleteEntry(path, id){
+        return fetch(`${baseURL}/${path}/${id}`, {
+            method: "DELETE"
+        })
     }
 }
 export default API
