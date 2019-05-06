@@ -75,6 +75,24 @@ export default class ApplicationViews extends Component {
                 this.setState({ images: images })
             })
     }
+
+    deleteDrawing = (imgUrl, id) => {
+        //Gets JSON image URL and id passed from mapping over list of images in Profile.js
+        const imageRef = storage.refFromURL(imgUrl)
+        //Deletes Firebase file in Storage
+        imageRef.delete().then(() => {
+            //Then deletes JSON Object containing that URL.
+            return ApiManager.deleteEntry("images", id)
+            .then(() => ApiManager.getAll("images"))
+            .then(images => {
+                //Updates state with images minus the one deleted
+                this.setState({images: images})
+            })
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -83,10 +101,11 @@ export default class ApplicationViews extends Component {
                 }} />
                 <Route path="/profile" render={props => {
                     return <Profile {...props}
-                        images = {this.state.images}
+                        images={this.state.images}
                         categories={this.state.categories}
                         saveDrawing={this.saveDrawing}
-                        saveDrawing2={this.saveDrawing2} />
+                        saveDrawing2={this.saveDrawing2}
+                        deleteDrawing={this.deleteDrawing} />
                 }} />
                 <Route path="/friends" render={props => {
                     return <FriendsList />
