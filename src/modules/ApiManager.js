@@ -13,6 +13,16 @@ const API = {
         return fetch(`${baseURL}/${path}/${id}`)
         .then(e => e.json())
     },
+    updateEntry(obj, path){
+        return fetch(`${baseURL}/${path}/${obj.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+        .then(e => e.json())
+    },
     postEntry(obj, path) {
         return fetch(`${baseURL}/${path}`, {
             method: "POST",

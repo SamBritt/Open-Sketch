@@ -25,7 +25,6 @@ class MyGreatComponent extends Component {
             let rgb = parseInt(this.state.brushColor)
             let thergb = "rgb(" + 0 + "," + 0 + "," + 0 + "," + force + ")";
             this.state.brushColor = thergb
-        canv
         
 
     }

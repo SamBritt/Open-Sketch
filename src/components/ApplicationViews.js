@@ -7,6 +7,8 @@ import Profile from './profile/Profile';
 import ApiManager from '../modules/ApiManager'
 import Login from './login/Login'
 import Register from './login/Register'
+import PressureTest from './canvas/PressureTest'
+import CanvasEditForm from './canvas/CanvasEditForm';
 
 export default class ApplicationViews extends Component {
     state = {
@@ -55,7 +57,7 @@ export default class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("userID") !== null
 
-    saveDrawing = (name, lessonsLearned, categoryId) => {
+    saveDrawing = (name, lessonsLearned, categoryId, userId) => {
         //Generates a random number to ensure no 2 images are named the same in Firebase Storage
         let rand = Math.random();
         //Gets the 2nd Layer of CanvasDraw Component (drawing layer) and convverts it to a blob
@@ -79,6 +81,7 @@ export default class ApplicationViews extends Component {
                     //Put that url reference in the imageUrl key.
                     storage.ref('images').child(`${rand}`).getDownloadURL().then(url => {
                         const newObj = {
+                            userId: Number(sessionStorage.getItem("userID")),
                             categoryId: Number(categoryId),
                             name: name,
                             imageUrl: url,
@@ -94,7 +97,7 @@ export default class ApplicationViews extends Component {
     }
     saveDrawing2 = (newDrawing) => {
         return ApiManager.postEntry(newDrawing, "images")
-            .then(() => ApiManager.getAll("images"))
+            .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
             .then(images => {
                 this.setState({ images: images })
             })
@@ -116,6 +119,15 @@ export default class ApplicationViews extends Component {
             console.log(error)
         })
     }
+    updateDrawing = (imageToUpdate) => {
+        return ApiManager.updateEntry(imageToUpdate, "images")
+            .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
+            .then(images => {
+                this.setState({
+                    images: images
+                })
+            })
+    }
 
     render() {
         return (
@@ -132,13 +144,13 @@ export default class ApplicationViews extends Component {
                 />
                 <Route exact path="/home" render={props => {
                     if (this.isAuthenticated()) {
-                        return <FriendsList />
+                        return <PressureTest />
                     } else {
                         return <Redirect to="/" />
                     }
 
                 }} />
-                <Route path="/profile" render={props => {
+                <Route exact path="/profile" render={props => {
                     if (this.isAuthenticated()) {
                         return <Profile {...props}
                             images={this.state.images}
@@ -150,6 +162,14 @@ export default class ApplicationViews extends Component {
                         return <Redirect to="/" />
                     }
                 }} />
+                <Route path="/profile/:imageId(\d+)/edit" render={props => {
+                    return <CanvasEditForm {...props} updateDrawing={this.updateDrawing}
+                    categories={this.state.categories}
+                />
+                }
+                }
+
+                />
                 <Route path="/friends" render={props => {
                     if (this.isAuthenticated()) {
                         return <FriendsList />

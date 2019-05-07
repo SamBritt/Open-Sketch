@@ -6,7 +6,8 @@ export default class CanvasSaveForm extends Component {
         name: "",
         lessonsLearned: "",
         categoryId: "",
-        imageUrl: ""
+        imageUrl: "",
+        userId: ""
     }
 
     handleFieldChange = (event) => {
@@ -18,7 +19,8 @@ export default class CanvasSaveForm extends Component {
     handleSaveSketch = (event) => {
         event.preventDefault();
 
-        this.props.saveDrawing(this.state.name, this.state.lessonsLearned, this.state.categoryId)
+        this.props.saveDrawing(this.state.name, this.state.lessonsLearned, this.state.categoryId, this.state.userId)
+        
     }
 
 
