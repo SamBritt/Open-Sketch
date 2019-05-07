@@ -34,6 +34,7 @@ export default class Profile extends Component {
                             <div className="container">
                                 <h4>{image.name}</h4>
                                 <p>{image.lessonsLearned}</p>
+                                <button onClick = {() => this.props.history.push(`/profile/${image.id}/edit`)}>Edit</button>
                                 <button onClick={() => this.handleDelete(image)}>Delete</button>
                             </div>
                         </div>
