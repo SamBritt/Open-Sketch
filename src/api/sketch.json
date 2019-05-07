@@ -19,6 +19,11 @@
       "userName": "samb",
       "password": "lkjlkjh55",
       "id": 5
+    },
+    {
+      "userName": "Praxal",
+      "password": "jamesb",
+      "id": 6
     }
   ],
   "friends": [
@@ -35,39 +40,47 @@
   ],
   "images": [
     {
+      "userId": 6,
       "categoryId": 2,
       "name": "Quick Chest",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.19808073019660521?alt=media&token=e78cf52a-8e81-4629-8b60-2a68ef412293",
       "lessonsLearned": "Not much yet",
       "id": 7
     },
-    {
+    {  "userId": 1,
       "categoryId": 1,
       "name": "Face",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21015162833694467?alt=media&token=5b8f5913-49c4-43c8-9bc7-ab2bad3946fb",
       "lessonsLearned": "This is challenging",
       "id": 11
     },
-    {
+    { "userId": 6,
       "categoryId": 1,
       "name": "Face",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.10925139940205364?alt=media&token=b7023396-b1a2-40f5-a62a-769de42f3f3c",
       "lessonsLearned": "Nothing",
       "id": 12
     },
-    {
+    { "userId": 1,
       "categoryId": 1,
       "name": "Face",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.35640457405947834?alt=media&token=f9c43bc0-70e4-4b98-8686-8027f1b61f62",
       "lessonsLearned": "Nothing",
       "id": 13
     },
-    {
+    { "userId": 1,
       "categoryId": 1,
       "name": "Face",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6667458256258016?alt=media&token=68892145-1bf1-4f10-a9dc-2aa6f7746fe7",
       "lessonsLearned": "Nothing",
       "id": 14
+    },
+    { "userId": 1,
+      "categoryId": 2,
+      "name": "Line drawing",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.15678100299934727?alt=media&token=e00610f5-c750-4593-9dd2-0c8d07026af6",
+      "lessonsLearned": "Nothing",
+      "id": 15
     }
   ],
   "categories": [

@@ -125,21 +125,37 @@ export default class ApplicationViews extends Component {
                         onLogin={this.onLogin}{...props} />
                 }} />
                 <Route exact path="/register" render={props => {
-                        return <Register users={this.state.users}
-                            registerUser={this.registerUser} onLogin={this.onLogin} {...props} />
+                    return <Register users={this.state.users}
+                        registerUser={this.registerUser} onLogin={this.onLogin} {...props} />
 
-                    }}
+                }}
                 />
+                <Route exact path="/home" render={props => {
+                    if (this.isAuthenticated()) {
+                        return <FriendsList />
+                    } else {
+                        return <Redirect to="/" />
+                    }
+
+                }} />
                 <Route path="/profile" render={props => {
-                    return <Profile {...props}
-                        images={this.state.images}
-                        categories={this.state.categories}
-                        saveDrawing={this.saveDrawing}
-                        saveDrawing2={this.saveDrawing2}
-                        deleteDrawing={this.deleteDrawing} />
+                    if (this.isAuthenticated()) {
+                        return <Profile {...props}
+                            images={this.state.images}
+                            categories={this.state.categories}
+                            saveDrawing={this.saveDrawing}
+                            saveDrawing2={this.saveDrawing2}
+                            deleteDrawing={this.deleteDrawing} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
                 <Route path="/friends" render={props => {
-                    return <FriendsList />
+                    if (this.isAuthenticated()) {
+                        return <FriendsList />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
             </React.Fragment>
         )

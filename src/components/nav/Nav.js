@@ -17,6 +17,7 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/friends">Friends</Link>
                     </li>
                 </ul>
+                <Link className="mr-1" onClick={() => sessionStorage.clear()} to="/">Logout</Link>
             </nav>
         )
     }
