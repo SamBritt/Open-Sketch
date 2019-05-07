@@ -5,9 +5,11 @@
   "dependencies": {
     "firebase": "^5.10.1",
     "immutable": "^4.0.0-rc.12",
+    "pressure": "^2.1.2",
     "react": "^16.8.6",
     "react-canvas-draw": "^1.0.1-hotfix.4",
     "react-dom": "^16.8.6",
+    "react-pressure": "^0.1.7",
     "react-scripts": "3.0.0"
   },
   "scripts": {
