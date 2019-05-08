@@ -41,6 +41,11 @@
       "id": 3,
       "userId": 6,
       "currentUserId": 1
+    },
+    {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 4
     }
   ],
   "images": [
@@ -163,6 +168,14 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9889421541179937?alt=media&token=be2eef08-a089-4631-af3d-b9470d484d74",
       "lessonsLearned": "lakdjflkasjflkdsjf",
       "id": 28
+    },
+    {
+      "userId": 1,
+      "categoryId": 0,
+      "name": "asd",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21516214789291532?alt=media&token=87eacd38-5378-4d11-b192-d28c7602b8f2",
+      "lessonsLearned": "asd",
+      "id": 29
     }
   ],
   "categories": [

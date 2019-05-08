@@ -1,35 +1,18 @@
 import React, { Component } from 'react'
+import FriendSearch from './FriendSearch'
 
 export default class FriendsList extends Component {
-
-    componentDidMount() {
-
-    }
-
     render() {
-        console.log(this.props.friendsImages)
-        console.log(this.props.friends)
-
         return (
             <React.Fragment>
                 <div>
+                    <FriendSearch addFriend={this.props.addFriend} />
+                    <h2>Friends List</h2>
                     {
-                        this.props.friendsImages.map(friend =>
-
-                            <div key={friend[0].user.id}>
-                                <h2>{friend[0].user.userName}</h2>
-
-                                {friend.map(image =>
-                                    <div className="card">
-                                        {
-                                            <img src={image.imageUrl} alt="Image" />
-                                        }
-                                    </div>
-                                )}
-
-                                    <div className="container">
-                                        <h4>{/**/}</h4>
-                                    </div>
+                        this.props.friends.map(friend =>
+                            <div key={friend.user.id}>
+                                <h4>{friend.user.userName}</h4>
+                                <button>Remove Friend</button>
                             </div>
                         )
                     }

@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Route, Redirect } from "react-router-dom"
 import { storage } from '../config/FireBaseConfig'
 import Canvas from './canvas/Canvas'
-import FriendsList from './friends/FriendsList';
+import FriendsWithImagesList from './friends/FriendsWithImagesList';
+import FriendsSearch from './friends/FriendSearch'
 import Profile from './profile/Profile';
 import ApiManager from '../modules/ApiManager'
 import Login from './login/Login'
 import Register from './login/Register'
 import PressureTest from './canvas/PressureTest'
 import CanvasEditForm from './canvas/CanvasEditForm';
+import FriendsList from './friends/FriendsList';
 
 export default class ApplicationViews extends Component {
     state = {
@@ -63,6 +65,27 @@ export default class ApplicationViews extends Component {
             .then(users => this.setState({
                 users: users
             }))
+    }
+    addFriend = (user) => {
+        if (!user) {
+            window.alert("It seems like that user does not exist!")
+        } else if (user.id === Number(sessionStorage.getItem("userID"))) {
+            window.alert("You can't add yourself as a friend!")
+        } else if (this.state.friends.find(friendToFind => friendToFind.user.userName.toLowerCase() === user.userName.toLowerCase())) {
+            window.alert("You are already friends with this user!")
+        } else if (user) {
+            if (window.confirm(`Add ${user.userName} as a friend?`)) {
+
+                const newFriend = {
+                    userId: user.id,
+                    currentUserId: Number(sessionStorage.getItem("userID"))
+                }
+                ApiManager.postEntry(newFriend, "friends")
+                    .then(() => this.loadAllData(sessionStorage.getItem("userID")))
+            } else {
+                window.alert("Username not found")
+            }
+        }
     }
 
     isAuthenticated = () => sessionStorage.getItem("userID") !== null
@@ -154,7 +177,7 @@ export default class ApplicationViews extends Component {
                 />
                 <Route exact path="/home" render={props => {
                     if (this.isAuthenticated()) {
-                        return <FriendsList {...props} friends={this.state.friends}
+                        return <FriendsWithImagesList {...props} friends={this.state.friends}
                             users={this.state.users}
                             images={this.state.images}
                             friendsImages={this.state.friendsImages} />
@@ -186,7 +209,8 @@ export default class ApplicationViews extends Component {
                 />
                 <Route path="/friends" render={props => {
                     if (this.isAuthenticated()) {
-                        return <FriendsList />
+                        return <FriendsList friends={this.state.friends}
+                            addFriend={this.addFriend} />
                     } else {
                         return <Redirect to="/" />
                     }
