@@ -15,15 +15,13 @@ export default class Login extends Component {
 
     handleLogin = (e) => {
         e.preventDefault();
-        console.log(e)
-        console.log("kajsdhkjashd")
+
         fetch(`http://localhost:8088/users`)
             .then(r => r.json())
             .then(userList => {
                 let foundUserName = userList.find(user =>
                     user.userName.toLowerCase() === this.state.userName.toLowerCase() && user.password.toLowerCase() === this.state.password.toLowerCase()
                 )
-                console.log(foundUserName)
                 if (foundUserName) {
                     sessionStorage.setItem("userID", foundUserName.id)
                     this.props.onLogin();
