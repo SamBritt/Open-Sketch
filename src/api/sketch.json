@@ -33,19 +33,9 @@
       "currentUserId": 2
     },
     {
-      "id": 2,
-      "userId": 2,
-      "currentUserId": 1
-    },
-    {
-      "id": 3,
       "userId": 6,
-      "currentUserId": 1
-    },
-    {
-      "userId": 5,
       "currentUserId": 1,
-      "id": 4
+      "id": 2
     }
   ],
   "images": [
@@ -56,14 +46,6 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.19808073019660521?alt=media&token=e78cf52a-8e81-4629-8b60-2a68ef412293",
       "lessonsLearned": "Not much yet",
       "id": 7
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "Half man face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21015162833694467?alt=media&token=5b8f5913-49c4-43c8-9bc7-ab2bad3946fb",
-      "lessonsLearned": "This is okay",
-      "id": 11
     },
     {
       "userId": 6,
@@ -90,92 +72,12 @@
       "id": 14
     },
     {
-      "userId": 2,
+      "userId": 1,
       "categoryId": 2,
       "name": "Line drawing",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.15678100299934727?alt=media&token=e00610f5-c750-4593-9dd2-0c8d07026af6",
       "lessonsLearned": "Nothing",
       "id": 15
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.12268298197317273?alt=media&token=b9935f48-eeb1-4f78-8102-ba4ef7f51f21",
-      "lessonsLearned": "asd",
-      "id": 20
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9735399949444303?alt=media&token=22294d2c-e7f1-4380-b2f8-1bdbf2cb6730",
-      "lessonsLearned": "asd",
-      "id": 21
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6152854512852093?alt=media&token=7b031106-913e-4515-9f40-dafe0625fb95",
-      "lessonsLearned": "asd",
-      "id": 22
-    },
-    {
-      "userId": 1,
-      "categoryId": 2,
-      "name": "Sam Britt",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.12395739284428964?alt=media&token=d8b86c95-645c-4a95-808d-6eb13f575ced",
-      "lessonsLearned": "sd",
-      "id": 23
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3200117501888984?alt=media&token=94cf3287-c13a-4381-86db-a0b5c3ca6237",
-      "lessonsLearned": "asd",
-      "id": 24
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "sad",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.2085994747035591?alt=media&token=3c7afc1b-1d60-4e2b-8131-dfe806eda92b",
-      "lessonsLearned": "asd",
-      "id": 25
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8493376474236178?alt=media&token=38795ef5-a8aa-4974-aa94-b3c6fd41be2c",
-      "lessonsLearned": "asd",
-      "id": 26
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21187211192295363?alt=media&token=8e9af282-8b49-4f15-823b-bcfa16683d22",
-      "lessonsLearned": "asd",
-      "id": 27
-    },
-    {
-      "userId": 1,
-      "categoryId": 3,
-      "name": "alksjdlaksjd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9889421541179937?alt=media&token=be2eef08-a089-4631-af3d-b9470d484d74",
-      "lessonsLearned": "lakdjflkasjflkdsjf",
-      "id": 28
-    },
-    {
-      "userId": 1,
-      "categoryId": 0,
-      "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.21516214789291532?alt=media&token=87eacd38-5378-4d11-b192-d28c7602b8f2",
-      "lessonsLearned": "asd",
-      "id": 29
     }
   ],
   "categories": [

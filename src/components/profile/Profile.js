@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Canvas from '../canvas/Canvas';
+import ApiManager from '../../modules/ApiManager'
 import '../profile/profile.css'
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 export default class Profile extends Component {
     state = {
@@ -15,11 +14,20 @@ export default class Profile extends Component {
         })
     }
     handleDelete = (event) => {
+        event.preventDefault();
+        console.log(event.target)
+        ApiManager.getOne("images", event.target.id)
+            .then(image => {
+                let urlToDelete = image.imageUrl
+                let imageId = image.id
+                this.props.deleteDrawing(urlToDelete, imageId)
+            })
         //Get URL and id stored in JSON, pass to deleteDrawing() function
-        let urlToDelete = event.imageUrl
-        let imageId = event.id
-
-        this.props.deleteDrawing(urlToDelete, imageId)
+        // let urlToDelete = event.target.imageUrl
+        // let imageId = event.target.id
+        // console.log(urlToDelete)
+        // console.log(imageId)
+        // this.props.deleteDrawing(urlToDelete, imageId)
 
     }
 
@@ -36,8 +44,8 @@ export default class Profile extends Component {
                             <div className="container">
                                 <h4>{image.name}</h4>
                                 <p>{image.lessonsLearned}</p>
-                                <button onClick = {() => this.props.history.push(`/profile/${image.id}/edit`)}>Edit</button>
-                                <button onClick={() => this.handleDelete(image)}>Delete</button>
+                                <button onClick={() => this.props.history.push(`/profile/${image.id}/edit`)}>Edit</button>
+                                <button id={image.id} onClick={this.handleDelete}>Delete</button>
                             </div>
                         </div>
                     )}
