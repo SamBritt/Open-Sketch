@@ -2,6 +2,7 @@ const baseURL = "http://localhost:8088"
 
 const API = {
     getAll(path, userId){
+        console.log("asdj")
         return fetch(`${baseURL}/${path}?userId=${userId}`)
         .then(e => e.json())
     },

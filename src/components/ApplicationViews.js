@@ -88,6 +88,11 @@ export default class ApplicationViews extends Component {
         }
     }
 
+    removeFriend = (id) => {
+        ApiManager.deleteEntry("friends", id)
+            .then(() => this.loadAllData(sessionStorage.getItem("userID")))
+    }
+
     isAuthenticated = () => sessionStorage.getItem("userID") !== null
 
     saveDrawing = (name, lessonsLearned, categoryId, userId) => {
@@ -143,7 +148,7 @@ export default class ApplicationViews extends Component {
         imageRef.delete().then(() => {
             //Then deletes JSON Object containing that URL.
             return ApiManager.deleteEntry("images", id)
-                .then(() => ApiManager.getAll("images"))
+                .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
                 .then(images => {
                     //Updates state with images minus the one deleted
                     this.setState({ images: images })
@@ -210,7 +215,8 @@ export default class ApplicationViews extends Component {
                 <Route path="/friends" render={props => {
                     if (this.isAuthenticated()) {
                         return <FriendsList friends={this.state.friends}
-                            addFriend={this.addFriend} />
+                            addFriend={this.addFriend}
+                            removeFriend={this.removeFriend} />
                     } else {
                         return <Redirect to="/" />
                     }
