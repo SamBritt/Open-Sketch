@@ -13,6 +13,14 @@ const API = {
         return fetch(`${baseURL}/${path}/${id}`)
         .then(e => e.json())
     },
+    getFriendsUserId(userId){
+        return fetch(`${baseURL}/friends?currentUserId=${userId}&_expand=user`)
+        .then(e => e.json())
+    },
+    getFriendsImage(userId){
+        return fetch(`${baseURL}/images?_expand=user&userId=${userId}`)
+        .then(e => e.json())
+    },
     updateEntry(obj, path){
         return fetch(`${baseURL}/${path}/${obj.id}`, {
             method: "PATCH",

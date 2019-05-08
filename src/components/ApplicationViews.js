@@ -16,7 +16,8 @@ export default class ApplicationViews extends Component {
         friends: [],
         images: [],
         categories: [],
-        userId: ""
+        userId: "",
+        friendsImages: []
 
     }
     componentDidMount() {
@@ -34,6 +35,15 @@ export default class ApplicationViews extends Component {
             .then(users => newState.users = users)
             .then(() => ApiManager.getAll("friends", currentUserId))
             .then(friends => newState.friends = friends)
+            .then(() => ApiManager.getFriendsUserId(currentUserId))
+            .then(friends => newState.friends = friends)
+            .then(() => ApiManager.getFriendsUserId(currentUserId))
+            .then(r => r.map(e => e.user.id))
+            .then(r => r.map(e => ApiManager.getFriendsImage(e)))
+            .then(r => Promise.all(r))
+            .then(r => {
+                newState.friendsImages = r
+            })
             .then(() => ApiManager.getAll("images", currentUserId))
             .then(images => newState.images = images)
             .then(() => ApiManager.getAll("categories", currentUserId))
@@ -144,7 +154,11 @@ export default class ApplicationViews extends Component {
                 />
                 <Route exact path="/home" render={props => {
                     if (this.isAuthenticated()) {
-                        return <PressureTest />
+                        return <FriendsList {...props} friends={this.state.friends}
+                            users={this.state.users}
+                            images={this.state.images}
+                            friendsImages={this.state.friendsImages} />
+
                     } else {
                         return <Redirect to="/" />
                     }
@@ -164,8 +178,8 @@ export default class ApplicationViews extends Component {
                 }} />
                 <Route path="/profile/:imageId(\d+)/edit" render={props => {
                     return <CanvasEditForm {...props} updateDrawing={this.updateDrawing}
-                    categories={this.state.categories}
-                />
+                        categories={this.state.categories}
+                    />
                 }
                 }
 

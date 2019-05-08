@@ -13,10 +13,6 @@ export default class Canvas extends Component {
         saveData: ""
     }
 
-    handleSaveSketch = () => {
-        console.log("save sketch clicked")
-
-    }
     loadSaveForm = () => {
         this.setState({
             showSaveForm: true

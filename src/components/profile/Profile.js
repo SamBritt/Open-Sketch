@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Canvas from '../canvas/Canvas';
 import '../profile/profile.css'
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 export default class Profile extends Component {
     state = {
