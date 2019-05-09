@@ -11,6 +11,7 @@ import Register from './login/Register'
 import PressureTest from './canvas/PressureTest'
 import CanvasEditForm from './canvas/CanvasEditForm';
 import FriendsList from './friends/FriendsList';
+import UserImageList from './users/UserImageList'
 
 export default class ApplicationViews extends Component {
     state = {
@@ -19,8 +20,8 @@ export default class ApplicationViews extends Component {
         images: [],
         categories: [],
         userId: "",
-        friendsImages: []
-
+        friendsImages: [],
+        usersImages: []
     }
     componentDidMount() {
         let currentUserId = sessionStorage.getItem("userID")
@@ -48,6 +49,8 @@ export default class ApplicationViews extends Component {
             })
             .then(() => ApiManager.getAll("images", currentUserId))
             .then(images => newState.images = images)
+            .then(() => ApiManager.getAllUsersImages())
+            .then(usersImages => newState.usersImages = usersImages)
             .then(() => ApiManager.getAll("categories", currentUserId))
             .then(categories => newState.categories = categories)
             .then(() => this.setState(newState))
@@ -182,11 +185,15 @@ export default class ApplicationViews extends Component {
                 />
                 <Route exact path="/home" render={props => {
                     if (this.isAuthenticated()) {
-                        return <FriendsWithImagesList {...props} friends={this.state.friends}
-                            users={this.state.users}
-                            images={this.state.images}
-                            friendsImages={this.state.friendsImages} />
-
+                        return (
+                            <React.Fragment>
+                                <FriendsWithImagesList {...props} friends={this.state.friends}
+                                    users={this.state.users}
+                                    images={this.state.images}
+                                    friendsImages={this.state.friendsImages} />
+                                    <UserImageList usersImages = {this.state.usersImages}/>
+                            </React.Fragment>
+                        )
                     } else {
                         return <Redirect to="/" />
                     }
