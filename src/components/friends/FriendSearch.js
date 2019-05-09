@@ -30,7 +30,7 @@ export default class FriendsSearch extends Component {
             <React.Fragment>
                 <div>
                     <form>
-                        <label>Add New Friend</label>
+                        <label>Find artists</label>
                         <input type="text"
                             id="search"
                             value={this.state.search}

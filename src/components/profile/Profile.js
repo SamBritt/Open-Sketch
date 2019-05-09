@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import Canvas from '../canvas/Canvas';
+
 import ApiManager from '../../modules/ApiManager'
 import '../profile/profile.css'
 
 export default class Profile extends Component {
-    state = {
-        showCanvas: false
-    }
+    // state = {
+    //     showCanvas: false
+    // }
 
-    revealCanvas = () => {
-        this.setState({
-            showCanvas: true
-        })
-    }
+    // revealCanvas = () => {
+    //     this.setState({
+    //         showCanvas: true
+    //     })
+    // }
     handleDelete = (event) => {
         event.preventDefault();
         console.log(event.target)
@@ -35,7 +35,8 @@ export default class Profile extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <button onClick={this.revealCanvas}>Create New Sketch</button>
+                    <button onClick={() => this.props.history.push("/profile/new")}>Create New Sketch</button>
+                    
                 </div>
                 <div className="wrapper">
                     {this.props.images.map(image =>
@@ -50,7 +51,7 @@ export default class Profile extends Component {
                         </div>
                     )}
                 </div>
-                {this.state.showCanvas ? <Canvas ref="canvasRef" categories={this.props.categories}{...this.props} /> : null}
+
             </React.Fragment>
         )
     }

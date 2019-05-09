@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FriendSearch from './FriendSearch'
+import {Link} from 'react-router-dom'
 
 export default class FriendsList extends Component {
 
@@ -18,7 +19,7 @@ export default class FriendsList extends Component {
                     {
                         this.props.friends.map(friend =>
                             <div key={friend.user.id}>
-                                <h4>{friend.user.userName}</h4>
+                                <h4><Link to = {`/${friend.user.userName}`}>{friend.user.userName}</Link></h4>
                                 <button id = {friend.id} onClick = {this.handleRemoveFriend}>Remove Friend</button>
                             </div>
                         )
