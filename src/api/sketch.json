@@ -31,6 +31,16 @@
       "id": 1,
       "userId": 1,
       "currentUserId": 2
+    },
+    {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "currentUserId": 1,
+      "id": 3
     }
   ],
   "images": [
