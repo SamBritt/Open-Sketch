@@ -6,18 +6,20 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 class NavBar extends Component {
     render() {
         return (
-            <Nav>
-                <NavItem>
-                    <Link to ="/home">Home</Link>
-                </NavItem>
-                <NavItem>
-                    <Link to ="/profile">Profile</Link>
-                </NavItem>
-                <NavItem>
-                    <Link to ="/friends">Friends</Link>
-                </NavItem>
-                <Link className="mr-1" onClick={() => sessionStorage.clear()} to="/">Logout</Link>
-            </Nav>
+            <nav className = "flex-md-nowrap p-0 shadow">
+                <ul className="nav nav-pills nav-fill">
+                    <li className = "nav-item">
+                        <Link to="/home">Home</Link>
+                    </li>
+                    <li className = "nav-item">
+                        <Link to="/profile">Profile</Link>
+                    </li>
+                    <li className = "nav-item">
+                        <Link to="/friends">Friends</Link>
+                    </li>
+                    <Link className="mr-1" onClick={() => sessionStorage.clear()} to="/">Logout</Link>
+                </ul>
+            </nav>
         )
     }
 }

@@ -204,6 +204,13 @@ export default class ApplicationViews extends Component {
                         return <Redirect to="/" />
                     }
                 }} />
+                <Route exact path="/profile/new" render={props => {
+                        return <Canvas images={this.state.images}
+                            categories={this.state.categories}
+                            saveDrawing={this.saveDrawing}
+                            saveDrawing2={this.saveDrawing2}
+                            deleteDrawing={this.deleteDrawing}{...props} />
+                }} />
                 <Route path="/profile/:imageId(\d+)/edit" render={props => {
                     return <CanvasEditForm {...props} updateDrawing={this.updateDrawing}
                         categories={this.state.categories}
