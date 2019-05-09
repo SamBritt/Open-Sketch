@@ -5,6 +5,7 @@ import Canvas from './canvas/Canvas'
 import FriendsWithImagesList from './friends/FriendsWithImagesList';
 import FriendsSearch from './friends/FriendSearch'
 import Profile from './profile/Profile';
+import UserProfile from './users/UserProfile'
 import ApiManager from '../modules/ApiManager'
 import Login from './login/Login'
 import Register from './login/Register'
@@ -185,15 +186,7 @@ export default class ApplicationViews extends Component {
                 />
                 <Route exact path="/home" render={props => {
                     if (this.isAuthenticated()) {
-                        return (
-                            <React.Fragment>
-                                <FriendsWithImagesList {...props} friends={this.state.friends}
-                                    users={this.state.users}
-                                    images={this.state.images}
-                                    friendsImages={this.state.friendsImages} />
-                                    <UserImageList usersImages = {this.state.usersImages}/>
-                            </React.Fragment>
-                        )
+                        return <UserImageList usersImages={this.state.usersImages} />
                     } else {
                         return <Redirect to="/" />
                     }
@@ -219,6 +212,17 @@ export default class ApplicationViews extends Component {
                 }
 
                 />
+                <Route exact path="/:userName" render={props => {
+                    if (this.isAuthenticated()) {
+                        return <UserProfile {...props} images={this.state.images}
+                            usersImages={this.state.usersImages}
+                            users={this.state.users}
+                            addFriend={this.addFriend}
+                        />
+                    } else {
+                        return <Redirect to="/" />
+                    }
+                }} />
                 <Route path="/friends" render={props => {
                     if (this.isAuthenticated()) {
                         return <FriendsList friends={this.state.friends}
