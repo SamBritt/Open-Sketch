@@ -7,9 +7,7 @@ export default class FriendsWithImagesList extends Component {
     }
 
     render() {
-        console.log(this.props.friendsImages)
-        console.log(this.props.friends)
-
+        console.log(this.props.users)
         return (
             <React.Fragment>
                 <div>

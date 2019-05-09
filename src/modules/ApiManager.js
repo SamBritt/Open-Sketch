@@ -10,6 +10,10 @@ const API = {
         return fetch(`${baseURL}/users`)
         .then(e => e.json()) 
     },
+    getAllUsersImages(){
+        return fetch(`${baseURL}/users?_embed=images`)
+        .then(e => e.json())
+    },
     getOne(path, id){
         return fetch(`${baseURL}/${path}/${id}`)
         .then(e => e.json())
