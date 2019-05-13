@@ -24,6 +24,16 @@
       "userName": "Praxal",
       "password": "jamesb",
       "id": 6
+    },
+    {
+      "userName": "Sagoram",
+      "password": "lkjlkjh55",
+      "id": 7
+    },
+    {
+      "userName": "Sagora Mentotum",
+      "password": "lkjlkjh55",
+      "id": 8
     }
   ],
   "friends": [
@@ -36,6 +46,16 @@
       "userId": 6,
       "currentUserId": 1,
       "id": 2
+    },
+    {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "currentUserId": 1,
+      "id": 4
     }
   ],
   "images": [
@@ -65,27 +85,27 @@
     },
     {
       "userId": 1,
+      "categoryId": 3,
+      "name": "Eyeball",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.5705245367914624?alt=media&token=8cea294f-320b-482a-b713-67d40f450dc8",
+      "lessonsLearned": "This program needs pressure sensitivity",
+      "id": 17
+    },
+    {
+      "userId": 1,
       "categoryId": 1,
-      "name": "Face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6667458256258016?alt=media&token=68892145-1bf1-4f10-a9dc-2aa6f7746fe7",
-      "lessonsLearned": "Nothing",
-      "id": 14
+      "name": "Line",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3653749229052483?alt=media&token=edf2b26f-eb5b-46fa-9de7-aa210879be3c",
+      "lessonsLearned": "asd",
+      "id": 18
     },
     {
       "userId": 1,
-      "categoryId": 2,
-      "name": "Line drawing",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.15678100299934727?alt=media&token=e00610f5-c750-4593-9dd2-0c8d07026af6",
-      "lessonsLearned": "Nothing",
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "categoryId": 2,
+      "categoryId": 1,
       "name": "asd",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8029355340673432?alt=media&token=3aa5bbe5-6498-4561-9539-baa06c2f54b5",
-      "lessonsLearned": "sa",
-      "id": 16
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9320287932813374?alt=media&token=dc838c71-8aff-4548-aef0-6506e979122f",
+      "lessonsLearned": "asd",
+      "id": 19
     }
   ],
   "categories": [

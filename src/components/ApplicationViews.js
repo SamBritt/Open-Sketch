@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from "react-router-dom"
+import { Route, Redirect, Switch } from "react-router-dom"
 import { storage } from '../config/FireBaseConfig'
 import Canvas from './canvas/Canvas'
 import FriendsWithImagesList from './friends/FriendsWithImagesList';
 import FriendsSearch from './friends/FriendSearch'
-import Profile from './profile/Profile';
+import CurrentUserProfile from './profile/CurrentUserProfile';
 import UserProfile from './users/UserProfile'
 import ApiManager from '../modules/ApiManager'
 import Login from './login/Login'
@@ -13,6 +13,7 @@ import PressureTest from './canvas/PressureTest'
 import CanvasEditForm from './canvas/CanvasEditForm';
 import FriendsList from './friends/FriendsList';
 import UserImageList from './users/UserImageList'
+import Profile from './profile/Profile';
 
 export default class ApplicationViews extends Component {
     state = {
@@ -22,10 +23,12 @@ export default class ApplicationViews extends Component {
         categories: [],
         userId: "",
         friendsImages: [],
-        usersImages: []
+        usersImages: [],
+        currentUserName: ""
     }
     componentDidMount() {
         let currentUserId = sessionStorage.getItem("userID")
+        let currentUserName = sessionStorage.getItem("userName")
         this.loadAllData(currentUserId)
     }
 
@@ -37,6 +40,9 @@ export default class ApplicationViews extends Component {
 
         ApiManager.getAllUsers()
             .then(users => newState.users = users)
+            .then(() => sessionStorage.getItem("userName"))
+
+            .then(userName => newState.currentUserName = userName)
             .then(() => ApiManager.getAll("friends", currentUserId))
             .then(friends => newState.friends = friends)
             .then(() => ApiManager.getFriendsUserId(currentUserId))
@@ -59,7 +65,8 @@ export default class ApplicationViews extends Component {
 
     onLogin = () => {
         this.setState({
-            userId: sessionStorage.getItem("userID")
+            userId: sessionStorage.getItem("userID"),
+            userName: sessionStorage.getItem("userName")
         })
         this.loadAllData(this.state.userId)
     }
@@ -98,6 +105,12 @@ export default class ApplicationViews extends Component {
     }
 
     isAuthenticated = () => sessionStorage.getItem("userID") !== null
+
+    OtherUsers = () => {
+        let currentUser = sessionStorage.getItem("userName")
+        let notCurrent = this.state.users.filter(otherUser => otherUser.userName !== currentUser)
+        return notCurrent
+    }
 
     saveDrawing = (name, lessonsLearned, categoryId, userId) => {
         //Generates a random number to ensure no 2 images are named the same in Firebase Storage
@@ -184,52 +197,50 @@ export default class ApplicationViews extends Component {
 
                 }}
                 />
-                <Route exact path="/home" render={props => {
+
+
+                <Route path="/profile/:userName" render={props => {
+                    if (this.isAuthenticated()) {
+                        return <Profile images={this.state.images}
+                            usersImages={this.state.usersImages}
+                            users={this.state.users}
+                            categories={this.state.categories}
+                            saveDrawing={this.saveDrawing}
+                            saveDrawing2={this.saveDrawing2}
+                            deleteDrawing={this.deleteDrawing}
+                            addFriend={this.addFriend} {...props}/>
+                    }
+                    else {
+                        return <Redirect to="/" />
+                    }
+                }
+                } />
+
+                <Route path="/home" render={props => {
                     if (this.isAuthenticated()) {
                         return <UserImageList usersImages={this.state.usersImages} />
                     } else {
                         return <Redirect to="/" />
                     }
 
-                }} />
-                <Route exact path="/profile" render={props => {
-                    if (this.isAuthenticated()) {
-                        return <Profile {...props}
-                            images={this.state.images}
-                            categories={this.state.categories}
-                            saveDrawing={this.saveDrawing}
-                            saveDrawing2={this.saveDrawing2}
-                            deleteDrawing={this.deleteDrawing} />
-                    } else {
-                        return <Redirect to="/" />
-                    }
-                }} />
+                }}
+                />
+
                 <Route exact path="/profile/new" render={props => {
-                        return <Canvas images={this.state.images}
-                            categories={this.state.categories}
-                            saveDrawing={this.saveDrawing}
-                            saveDrawing2={this.saveDrawing2}
-                            deleteDrawing={this.deleteDrawing}{...props} />
+                    return <Canvas images={this.state.images}
+                        categories={this.state.categories}
+                        saveDrawing={this.saveDrawing}
+                        saveDrawing2={this.saveDrawing2}
+                        deleteDrawing={this.deleteDrawing}{...props} />
                 }} />
-                <Route path="/profile/:imageId(\d+)/edit" render={props => {
+                <Route exact path="/profile/:imageId(\d+)/edit" render={props => {
                     return <CanvasEditForm {...props} updateDrawing={this.updateDrawing}
                         categories={this.state.categories}
                     />
                 }
                 }
-
                 />
-                <Route exact path="/:userName" render={props => {
-                    if (this.isAuthenticated()) {
-                        return <UserProfile {...props} images={this.state.images}
-                            usersImages={this.state.usersImages}
-                            users={this.state.users}
-                            addFriend={this.addFriend}
-                        />
-                    } else {
-                        return <Redirect to="/" />
-                    }
-                }} />
+
                 <Route path="/friends" render={props => {
                     if (this.isAuthenticated()) {
                         return <FriendsList friends={this.state.friends}
@@ -239,7 +250,7 @@ export default class ApplicationViews extends Component {
                         return <Redirect to="/" />
                     }
                 }} />
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }

@@ -24,6 +24,7 @@ export default class Login extends Component {
                 )
                 if (foundUserName) {
                     sessionStorage.setItem("userID", foundUserName.id)
+                    sessionStorage.setItem("userName", foundUserName.userName)
                     this.props.onLogin();
                     this.props.history.push("/home")
                 } else {
