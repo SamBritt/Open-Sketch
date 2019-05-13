@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ApiManager from '../../modules/ApiManager'
+import UserTagSearch from '../search/UserTagSearch'
 
 export default class UserProfile extends Component {
 
@@ -12,10 +13,13 @@ export default class UserProfile extends Component {
     }
 
     render() {
-        console.log(this.props.match.params.userName)
+        console.log(sessionStorage.getItem("userName"))
         return (
             <React.Fragment>
                 <div>
+                    <span className="mr-1">
+                    
+                    </span>
                     {
                         this.props.usersImages.filter(user =>
                             this.props.match.params.userName === user.userName

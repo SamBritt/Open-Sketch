@@ -33,7 +33,10 @@ export default class Register extends Component {
                     this.props.registerUser(newUser)
                         .then(() => ApiManager.getAllUsers())
                         .then(response => response.find(user => user.userName === this.state.userName))
-                        .then(matchedUser => sessionStorage.setItem("userID", matchedUser.id))
+                        .then(matchedUser => {
+                            sessionStorage.setItem("userID", matchedUser.id)
+                            sessionStorage.setItem("userName", matchedUser.userName)
+                        })
                         .then(() => this.props.onLogin())
                         .then(() => this.props.history.push("/home"))
                 }
@@ -67,7 +70,7 @@ export default class Register extends Component {
                             <footer>
                                 <button onClick={this.handleRegister}>Register</button>
                                 <button type="button"
-                                    onClick={() => this.props.history.push("/login")}>login</button>
+                                    onClick={() => this.props.history.push("/")}>Back to Login</button>
                             </footer>
                         </div>
                     </form>

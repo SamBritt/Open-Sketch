@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom"
 import OpenSketch from './components/OpenSketch'
-import CanvasDraw from "react-canvas-draw";
 
 import ApplicationViews from './components/ApplicationViews';
 

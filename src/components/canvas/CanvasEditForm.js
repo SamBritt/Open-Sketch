@@ -26,7 +26,7 @@ export default class CanvasEditForm extends Component {
             id: Number(this.props.match.params.imageId)
         }
         this.props.updateDrawing(updatedImage)
-            .then(() => this.props.history.push("/profile"))
+            .then(() => this.props.history.push(`/profile/${sessionStorage.getItem("userName")}`))
     }
     componentDidMount() {
         ApiManager.getOne("images", this.props.match.params.imageId)

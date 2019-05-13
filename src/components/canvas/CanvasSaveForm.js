@@ -20,6 +20,7 @@ export default class CanvasSaveForm extends Component {
         event.preventDefault();
 
         this.props.saveDrawing(this.state.name, this.state.lessonsLearned, this.state.categoryId, this.state.userId)
+        this.props.history.push(`/profile/${sessionStorage.getItem("userName")}`)
         
     }
 

@@ -11,20 +11,27 @@ export default class UserImageList extends Component {
             <React.Fragment>
                 <div>
                     {
-                        this.props.usersImages.map(e =>
-                            <div key={e.id}>
-                                <h2>{e.images.length > 0 ? <Link to={`/${e.userName}`}>{e.userName}</Link> : null}</h2>
+                        this.props.usersImages.map(user =>
+                            <div key={user.id}>
+                                <h2>{
+                                    user.images.length ?
+                                        <Link to={`/profile/${user.userName}`} > {user.userName}</Link>
+                                        : null
+                                }
+                                </h2>
                                 <div className="gallery">
                                     {
 
-                                        e.images.map(userImage =>
+                                        user.images.map(userImage =>
                                             <div key={userImage.id} className="card">
                                                 <img src={userImage.imageUrl} alt="Image"></img>
                                             </div>
                                         )
                                     }
                                 </div>
+
                             </div>
+
 
                         )
                     }
