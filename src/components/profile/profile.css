@@ -1,28 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-body{
+#root{
   font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  background-color: #2b2c2b;
+  margin: 0;
+  padding: 0; 
+}
+html{
+  height: 100vh;
+
 }
 .wrapper{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(250, 158, 83, 0.774);
     transition: 0.3s;
-    width: 30vw;
-
+    width: 20vw;
   }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(83, 217, 250, 0.474);
   }
   
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
   }
+  .label{
+    color: rgb(173, 187, 199);
+  }
+  

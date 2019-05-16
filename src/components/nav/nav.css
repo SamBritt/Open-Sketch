@@ -1,0 +1,10 @@
+.main-nav a{
+    font-size: 1.4em;
+    transition: 0.3s;
+    color: rgb(173, 187, 199);
+  }
+  .main-nav a:hover{
+    color: #ffffff;
+    transition: 0.3s;
+    text-decoration: none;
+  }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import CanvasDraw from "react-canvas-draw";
 import CanvasSaveForm from './CanvasSaveForm'
+import { ChromePicker } from 'react-color';
 import './canvas.css'
 
 export default class Canvas extends Component {
     state = {
-        color: "#ffc600",
+        brushColor: "rgb(0, 0, 0, 1)",
         canvasWidth: 500,
         canvasHeight: 500,
         brushRadius: 5,
@@ -20,12 +21,26 @@ export default class Canvas extends Component {
         })
     }
 
+    handleChange = (color) => {
+        console.log(color.rgb)
+        let colorValues = Object.values(color.rgb)
+        let colorStr = `rgba(`
+        
+        colorValues = colorValues.join(',')
+        colorStr += colorValues
+        colorStr += `)`
+        console.log(colorStr)
+        this.setState({ brushColor: colorStr });
+        console.log(this.state.brushColor)
+    };
+
 
     render() {
         return (
             <React.Fragment>
                 <div className="container">
                     <div>
+
                         <label>Brush-Radius:</label>
                         <input
                             type="number"
@@ -45,11 +60,17 @@ export default class Canvas extends Component {
                             }
                         />
                     </div>
-                        <CanvasDraw brushRadius={this.state.brushRadius}
-                            lazyRadius={this.state.lazyRadius}
-                            canvasWidth={this.state.canvasWidth}
-                            canvasHeight={this.state.canvasHeight} />
-                    <button onClick={this.loadSaveForm}>Complete</button>
+                    <ChromePicker color={this.state.brushColor}
+                        onChangeComplete={this.handleChange}
+                    />
+
+                    <CanvasDraw brushRadius={this.state.brushRadius}
+                        brushColor={this.state.brushColor}
+                        lazyRadius={this.state.lazyRadius}
+                        canvasWidth={this.state.canvasWidth}
+                        canvasHeight={this.state.canvasHeight}
+                    />
+                    <button className="button is-rounded is-primary" onClick={this.loadSaveForm}>Complete</button>
                     {this.state.showSaveForm ? <CanvasSaveForm saveDrawing2={this.saveDrawing2} saveDrawing={this.saveDrawing} categories={this.props.categories}{...this.props} /> : null}
                 </div>
             </React.Fragment>

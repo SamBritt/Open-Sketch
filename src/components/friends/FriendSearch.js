@@ -37,7 +37,7 @@ export default class FriendsSearch extends Component {
                             onChange={this.handleFieldChange}
                             required 
                             placeholder = "Username"/>
-                        <button type="button"
+                        <button className = "button is-rounded is-primary" type="button"
                             onClick={this.handleAddfriend}>Search</button>
                     </form>
                 </div>

@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.card{
+    display: flex;
+    width: 15vw;
+
+}
+
+.userNameWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.title.is-1{
+    color: rgb(101, 180, 211);
+}
