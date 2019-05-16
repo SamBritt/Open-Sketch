@@ -37,33 +37,50 @@ export default class Login extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <form>
-                        <label htmlFor="userNameInput">
-                            Username:
+                    <div className="container">
+                        <form>
+                            <div className="field">
+                                <label htmlFor="userNameInput" className="label">Username</label>
+                                <div className="control has-icons-left">
+                                    <input onChange={this.handleFieldChange}
+                                        type="text"
+                                        id="userName"
+                                        required
+                                        autoFocus=""
+                                        placeholder="Username"
+                                        className="input" />
+
+
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="field">
+                                <label className="label" htmlFor="passwordInput">
+                                    Password:
                         </label>
-                        <input onChange={this.handleFieldChange}
-                            type="text"
-                            id="userName"
-                            required
-                            autoFocus=""
-                            placeholder="Username" />
-                        <label htmlFor="passwordInput">
-                            Password:
-                        </label>
-                        <input onChange={this.handleFieldChange}
-                            type="text"
-                            id="password"
-                            required
-                            autoFocus=""
-                            placeholder="Password" />
-                        <div>
-                            <footer>
-                                <button onClick={this.handleLogin}>Login</button>
-                                <button type = "button"
-                                    onClick = {() => this.props.history.push("/register")}>Register</button>
-                            </footer>
-                        </div>
-                    </form>
+                                <div className="control has-icons-left">
+                                    <input className="input" onChange={this.handleFieldChange}
+                                        type="text"
+                                        id="password"
+                                        required
+                                        autoFocus=""
+                                        placeholder="Password" />
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <footer>
+                                    <button className="button is-rounded button is-success" onClick={this.handleLogin}>Login</button>
+                                    <button className="button is-rounded is-primary" type="button"
+                                        onClick={() => this.props.history.push("/register")}>Register</button>
+                                </footer>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </React.Fragment>
         )

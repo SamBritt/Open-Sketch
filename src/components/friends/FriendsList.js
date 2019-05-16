@@ -20,7 +20,7 @@ export default class FriendsList extends Component {
                         this.props.friends.map(friend =>
                             <div key={friend.user.id}>
                                 <h4><Link to = {`/profile/${friend.user.userName}`}>{friend.user.userName}</Link></h4>
-                                <button id = {friend.id} onClick = {this.handleRemoveFriend}>Remove Friend</button>
+                                <button className = "button is-rounded is-danger" id = {friend.id} onClick = {this.handleRemoveFriend}>Remove Friend</button>
                             </div>
                         )
                     }

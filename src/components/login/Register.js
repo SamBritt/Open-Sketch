@@ -18,7 +18,7 @@ export default class Register extends Component {
 
         ApiManager.getAllUsers()
             .then(userResult => {
-                let matchedUser = userResult.find(user => 
+                let matchedUser = userResult.find(user =>
                     user.userName.toLowerCase() === this.state.userName.toLowerCase()
                 )
                 if (matchedUser) {
@@ -47,33 +47,46 @@ export default class Register extends Component {
         return (
             <React.Fragment>
                 <div>
+                <div className = "container">
                     <form>
-                        <label htmlFor="userNameInput">
-                            Username:
-                </label>
-                        <input onChange={this.handleFieldChange}
-                            type="text"
-                            id="userName"
-                            required
-                            autoFocus=""
-                            placeholder="Username" />
-                        <label htmlFor="passwordInput">
-                            Password:
-                </label>
-                        <input onChange={this.handleFieldChange}
-                            type="text"
-                            id="password"
-                            required
-                            autoFocus=""
-                            placeholder="Password" />
+                        <div className="field">
+                            <label className="label"
+                                htmlFor="userNameInput">
+                                Username:
+                                </label>
+                            <div className="control">
+                                <input className = "input" onChange={this.handleFieldChange}
+                                    type="text"
+                                    id="userName"
+                                    required
+                                    autoFocus=""
+                                    placeholder="Username" />
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label className="label"
+                                htmlFor="passwordInput">
+                                Password:
+                                </label>
+                            <div className="control">
+                                <input className = "input" onChange={this.handleFieldChange}
+                                    type="text"
+                                    id="password"
+                                    required
+                                    autoFocus=""
+                                    placeholder="Password" />
+                            </div>
+                        </div>
                         <div>
                             <footer>
-                                <button onClick={this.handleRegister}>Register</button>
-                                <button type="button"
+                                <button className="button is-primary" onClick={this.handleRegister}>Register</button>
+                                <button className="button is-primary" type="button"
                                     onClick={() => this.props.history.push("/")}>Back to Login</button>
                             </footer>
                         </div>
                     </form>
+                    </div>
                 </div>
             </React.Fragment>
         )

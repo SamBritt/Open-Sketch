@@ -21,7 +21,7 @@ export default class CanvasSaveForm extends Component {
 
         this.props.saveDrawing(this.state.name, this.state.lessonsLearned, this.state.categoryId, this.state.userId)
         this.props.history.push(`/profile/${sessionStorage.getItem("userName")}`)
-        
+
     }
 
 
@@ -30,30 +30,47 @@ export default class CanvasSaveForm extends Component {
         return (
             <React.Fragment>
                 <form>
-                    <label htmlFor="nameInput">Sketch Name: </label>
-                    <input type="text"
-                        id="name"
-                        required
-                        onChange={this.handleFieldChange} />
-                    <label htmlFor="lessonsInput">Lessons Learned: </label>
-                    <input type="text"
-                        id="lessonsLearned"
-                        required
-                        onChange={this.handleFieldChange} />
-                    <label htmlFor="categoryInput">Category: </label>
-                    <select
-                        defaultValue=""
-                        name="category"
-                        id="categoryId"
-                        onChange={this.handleFieldChange}>
-                        <option value="" >Select a Category</option>
-                        {this.props.categories.map(e => (
-                            <option key={e.id} id={e.id} value={e.id}>
-                                {e.categoryName}
-                            </option>
-                        ))}
-                    </select>
-                    <button type="button" onClick={this.handleSaveSketch}>Save Sketch</button>
+                    <div className="field">
+                        <label className="label" htmlFor="nameInput">Sketch Name: </label>
+                        <div className="control">
+                            <input className="input" type="text"
+                                placeholder="Name your sketch..."
+                                id="name"
+                                required
+                                onChange={this.handleFieldChange} />
+                        </div>
+                    </div>
+                    <div className="field">
+                        <label className="label" htmlFor="lessonsInput">Lessions: </label>
+                        <div className="control">
+                            <input className="input" type="text"
+                            placeholder = "Learn anything new?..."
+                                id="lessonsLearned"
+                                required
+                                onChange={this.handleFieldChange} />
+                        </div>
+                    </div>
+                    <div className="field">
+                        <label className="label" htmlFor="categoryInput">Category: </label>
+                        <div className="control">
+                            <div className="select is-rounded">
+                                <select
+                                    defaultValue=""
+                                    name="category"
+                                    id="categoryId"
+                                    onChange={this.handleFieldChange}>
+                                    <option value="" disabled>Select a Category</option>
+                                    {this.props.categories.map(e => (
+                                        <option key={e.id} id={e.id} value={e.id}>
+                                            {e.categoryName}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button className="button is-rounded is-primary" type="button" onClick={this.handleSaveSketch}>Save Sketch</button>
                 </form>
             </React.Fragment>
         )

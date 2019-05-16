@@ -2,18 +2,14 @@ import React, { Component } from 'react'
 import { Route, Redirect, Switch } from "react-router-dom"
 import { storage } from '../config/FireBaseConfig'
 import Canvas from './canvas/Canvas'
-import FriendsWithImagesList from './friends/FriendsWithImagesList';
-import FriendsSearch from './friends/FriendSearch'
-import CurrentUserProfile from './profile/CurrentUserProfile';
-import UserProfile from './users/UserProfile'
 import ApiManager from '../modules/ApiManager'
 import Login from './login/Login'
 import Register from './login/Register'
-import PressureTest from './canvas/PressureTest'
 import CanvasEditForm from './canvas/CanvasEditForm';
 import FriendsList from './friends/FriendsList';
 import UserImageList from './users/UserImageList'
 import Profile from './profile/Profile';
+import 'bulma/css/bulma.css'
 
 export default class ApplicationViews extends Component {
     state = {
@@ -151,25 +147,43 @@ export default class ApplicationViews extends Component {
         })
     }
     saveDrawing2 = (newDrawing) => {
+        const newObj = {
+
+        }
+
         return ApiManager.postEntry(newDrawing, "images")
             .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
             .then(images => {
-                this.setState({ images: images })
+                // this.setState({
+                //     images: images
+                // })
+                newObj.images = images
             })
+            .then(() => ApiManager.getAllUsersImages())
+            .then(response => newObj.usersImages = response)
+            .then(() => this.setState(newObj))
     }
 
     deleteDrawing = (imgUrl, id) => {
         //Gets JSON image URL and id passed from mapping over list of images in Profile.js
         const imageRef = storage.refFromURL(imgUrl)
+        const newObj = {
+
+        }
         //Deletes Firebase file in Storage
         imageRef.delete().then(() => {
             //Then deletes JSON Object containing that URL.
             return ApiManager.deleteEntry("images", id)
                 .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
                 .then(images => {
+                    console.log(images)
                     //Updates state with images minus the one deleted
-                    this.setState({ images: images })
+                    newObj.images = images
+                    // this.setState({ images: images })
                 })
+                .then(() => ApiManager.getAllUsersImages())
+                .then(response => newObj.usersImages = response)
+                .then(() => this.setState(newObj))
         }).catch((error) => {
             console.log(error)
         })
@@ -199,7 +213,7 @@ export default class ApplicationViews extends Component {
                 />
 
 
-                <Route path="/profile/:userName" render={props => {
+                <Route exact path="/profile/:userName" render={props => {
                     if (this.isAuthenticated()) {
                         return <Profile images={this.state.images}
                             usersImages={this.state.usersImages}
@@ -208,7 +222,7 @@ export default class ApplicationViews extends Component {
                             saveDrawing={this.saveDrawing}
                             saveDrawing2={this.saveDrawing2}
                             deleteDrawing={this.deleteDrawing}
-                            addFriend={this.addFriend} {...props}/>
+                            addFriend={this.addFriend} {...props} />
                     }
                     else {
                         return <Redirect to="/" />
@@ -226,7 +240,7 @@ export default class ApplicationViews extends Component {
                 }}
                 />
 
-                <Route exact path="/profile/new" render={props => {
+                <Route exact path="/sketch/new" render={props => {
                     return <Canvas images={this.state.images}
                         categories={this.state.categories}
                         saveDrawing={this.saveDrawing}

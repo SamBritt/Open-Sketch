@@ -4,6 +4,7 @@ import ApiManager from '../../modules/ApiManager'
 import '../profile/profile.css'
 
 
+
 export default class CurrentUserProfile extends Component {
 
     handleDelete = (event) => {
@@ -15,30 +16,31 @@ export default class CurrentUserProfile extends Component {
                 let imageId = image.id
                 this.props.deleteDrawing(urlToDelete, imageId)
             })
-        //Get URL and id stored in JSON, pass to deleteDrawing() function
-        // let urlToDelete = event.target.imageUrl
-        // let imageId = event.target.id
-        // console.log(urlToDelete)
-        // console.log(imageId)
-        // this.props.deleteDrawing(urlToDelete, imageId)
-
     }
 
     render() {
         return (
             <React.Fragment>
                 <div>
-                    <button onClick={() => this.props.history.push("/profile/new")}>Create New Sketch</button>
+                    <button className="button is-rounded is-primary" onClick={() => this.props.history.push("/sketch/new")}>Create New Sketch</button>
                 </div>
                 <div className="wrapper">
                     {this.props.images.map(image =>
                         <div key={image.id} className="card">
-                            <img src={image.imageUrl} alt="Image" />
-                            <div className="container">
-                                <h4>{image.name}</h4>
-                                <p>{image.lessonsLearned}</p>
-                                <button onClick={() => this.props.history.push(`/profile/${image.id}/edit`)}>Edit</button>
-                                <button id={image.id} onClick={this.handleDelete}>Delete</button>
+                            <div className="card-image">
+                                <figure className="image is-square">
+                                    <img src={image.imageUrl} alt="Image" />
+                                </figure>
+
+                            </div>
+                            <div className="card-content">
+                                <div className="media-content">
+                                    <p className="title is-3">{image.name}</p>
+                                    <p className="subtitle is-6">{image.lessonsLearned}</p>
+                                </div>
+
+                                <button className="button is-rounded is-primary" onClick={() => this.props.history.push(`/profile/${image.id}/edit`)}>Edit</button>
+                                <button className="button is-rounded is-danger" id={image.id} onClick={this.handleDelete}>Delete</button>
                             </div>
                         </div>
                     )}

@@ -70,7 +70,7 @@ export default class CanvasEditForm extends Component {
                                 </option>
                             ))}
                         </select>
-                        <button onClick = {this.handleUpdate}>Update Event</button>
+                        <button className = "button is-primary" onClick = {this.handleUpdate}>Update Event</button>
                     </form>
                 </div>
             </React.Fragment>
