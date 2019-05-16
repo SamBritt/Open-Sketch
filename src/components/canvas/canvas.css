@@ -1,9 +1,23 @@
-
-
+.tile.is-ancestor{
+    display: flex;
+    justify-content: center;
+}
 
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.center-it{
+    width: 30vw;
+}
+#buttflex{
+    display: flex;
+    justify-content: center;
+}
+.slider-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

@@ -11,4 +11,5 @@
 .userLink:hover{
     color: #ffffff;
     font-size: 3em;
+    text-decoration: none;
 }

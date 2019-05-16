@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ApiManager from '../../modules/ApiManager'
+import './canvasEdit.css'
 
 export default class CanvasEditForm extends Component {
 
@@ -43,35 +44,49 @@ export default class CanvasEditForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <div>
-                    <form>
-                        <label htmlFor="nameInput">Name: </label>
-                        <input
-                            id="name"
-                            value={this.state.name}
-                            onChange={this.handleFieldChange}
-                        />
-                        <label htmlFor="lessonsInput">Lessons Learned: </label>
-                        <input
-                            id="lessonsLearned"
-                            value={this.state.lessonsLearned}
-                            onChange={this.handleFieldChange}
-                        />
-                        <label htmlFor="categoryInput">Category: </label>
-                        <select
-                            value= {this.state.categoryId}
-                            name="category"
-                            id="categoryId"
-                            onChange={this.handleFieldChange}>
-                            <option value="" >Select a Category</option>
-                            {this.props.categories.map(e => (
-                                <option key={e.id} id={e.id} value={e.id}>
-                                    {e.categoryName}
-                                </option>
-                            ))}
-                        </select>
-                        <button className = "button is-primary" onClick = {this.handleUpdate}>Update Event</button>
-                    </form>
+                <div className="container">
+                    <div className="field">
+                        <form>
+                            <label className="label" htmlFor="nameInput">Name: </label>
+                            <div className="control">
+                                <input className="input"
+                                    id="name"
+                                    value={this.state.name}
+                                    onChange={this.handleFieldChange}
+                                />
+                            </div>
+                            <div className="field">
+                                <label className="label" htmlFor="lessonsInput">Lessons Learned: </label>
+                                <div className="control">
+                                    <input className="input"
+                                        id="lessonsLearned"
+                                        value={this.state.lessonsLearned}
+                                        onChange={this.handleFieldChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="field">
+                                <label className="label" htmlFor="categoryInput">Category: </label>
+                                <div className="control">
+                                    <select
+                                        value={this.state.categoryId}
+                                        name="category"
+                                        id="categoryId"
+                                        onChange={this.handleFieldChange}>
+                                        <option value="" >Select a Category</option>
+                                        {this.props.categories.map(e => (
+                                            <option key={e.id} id={e.id} value={e.id}>
+                                                {e.categoryName}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="control">
+                                <button className="button is-primary" onClick={this.handleUpdate}>Update Event</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </React.Fragment>
         )

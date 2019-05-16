@@ -43,9 +43,19 @@
       "currentUserId": 2
     },
     {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 3
+    },
+    {
       "userId": 6,
       "currentUserId": 1,
-      "id": 2
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "currentUserId": 1,
+      "id": 5
     }
   ],
   "images": [
@@ -67,27 +77,43 @@
     },
     {
       "userId": 1,
-      "categoryId": 1,
-      "name": "Sam Britt",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.4539589012004501?alt=media&token=84919b39-3589-4f09-8126-796af55179f1",
-      "lessonsLearned": "asd",
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "Happy Face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6387050881652123?alt=media&token=5fdf2714-9d18-4040-ab6c-38624fc6f6c3",
-      "lessonsLearned": "Not really",
-      "id": 15
+      "categoryId": 2,
+      "name": "Chicken Head",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.02151050490726858?alt=media&token=7880f909-5e7f-41ff-9120-b20b1c52714f",
+      "lessonsLearned": "Buff chicken Man",
+      "id": 16
     },
     {
       "userId": 1,
       "categoryId": 2,
-      "name": "Chicken Man",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.02151050490726858?alt=media&token=7880f909-5e7f-41ff-9120-b20b1c52714f",
-      "lessonsLearned": "This is cool",
-      "id": 16
+      "name": "Color",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8489587440354762?alt=media&token=b5e12302-b17f-49d3-94f3-c6e06904b3cb",
+      "lessonsLearned": "Nothing",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "categoryId": 2,
+      "name": "Cloaked Man",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.13219359528415908?alt=media&token=9a0d146c-e6df-472c-84dc-f455a9e45000",
+      "lessonsLearned": "Color",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "categoryId": 1,
+      "name": "weird face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3933075993920523?alt=media&token=a771b093-ddaf-4fee-8ee0-b81cad3e72a9",
+      "lessonsLearned": "weird",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "categoryId": 1,
+      "name": "line",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.38084447330813376?alt=media&token=cd94257e-02c8-44b5-a125-7f6e797a41d2",
+      "lessonsLearned": "drawing",
+      "id": 20
     }
   ],
   "categories": [

@@ -21,8 +21,9 @@ export default class CurrentUserProfile extends Component {
     render() {
         return (
             <React.Fragment>
-                <div>
-                    <button className="button is-rounded is-primary" onClick={() => this.props.history.push("/sketch/new")}>Create New Sketch</button>
+                <div className="profileWrapper">
+                    <h1 className="title is-1">{sessionStorage.getItem("userName")}</h1>
+                    <button className="center-it button is-rounded is-primary" onClick={() => this.props.history.push("/sketch/new")}>Create New Sketch</button>
                 </div>
                 <div className="wrapper">
                     {this.props.images.map(image =>
@@ -46,7 +47,7 @@ export default class CurrentUserProfile extends Component {
                     )}
                 </div>
 
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }

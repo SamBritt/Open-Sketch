@@ -15,13 +15,14 @@ html{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  margin: 1em 0.5em 1em 0.5em;
 }
 
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(250, 158, 83, 0.774);
     transition: 0.3s;
-    width: 20vw;
+    width: 50vw;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -31,9 +32,21 @@ html{
   
   /* Add some padding inside the card container */
   .container {
-    padding: 2px 16px;
+    padding: 2px 2px;
   }
   .label{
     color: rgb(173, 187, 199);
   }
-  
+  /* .center-it{
+    display: flex;
+    justify-self: center;
+    width: 25vw;
+} */
+.title.is-1{
+  color: rgb(101, 211, 183);
+}
+.profileWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
