@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import ApiManager from '../../modules/ApiManager'
-import UserImageCard from '../users/UserImageCard'
-
 
 export default class UserTagSearch extends Component {
     render() {

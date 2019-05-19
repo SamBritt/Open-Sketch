@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import './userImage.css'
 import UserImageCard from './UserImageCard'
+import FullImageCard from './FullImageCard'
 
 export default class UserImageList extends Component {
 
@@ -26,10 +27,9 @@ export default class UserImageList extends Component {
                                     {
 
                                         user.images.map(userImage =>
-                                            // <div key={userImage.id} className="card">
-                                            //     <img src={userImage.imageUrl} alt="Image"></img>
-                                            // </div>
-                                            <UserImageCard key = {userImage.id} imageUrl = {userImage.imageUrl}/>
+                                        
+                                            // <UserImageCard key = {userImage.id} imageUrl = {userImage.imageUrl}/>
+                                            <FullImageCard key = {userImage.id} imageUrl = {userImage.imageUrl}/>
                                         )
                                     }
                                 </div>

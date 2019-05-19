@@ -1,0 +1,26 @@
+.is-large{
+    color: rgb(70, 83, 87);
+    font-size: 2em;
+    transition: 0.3s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.is-large:hover{
+    color: rgb(210, 215, 216);
+    transition: 0.3s;
+    font-size: 2em;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.friend-card{
+    background-color: rgb(185, 218, 226);
+}
+.friendWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
