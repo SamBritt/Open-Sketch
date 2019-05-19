@@ -86,14 +86,6 @@
     {
       "userId": 1,
       "categoryId": 2,
-      "name": "Color",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8489587440354762?alt=media&token=b5e12302-b17f-49d3-94f3-c6e06904b3cb",
-      "lessonsLearned": "Nothing",
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "categoryId": 2,
       "name": "Cloaked Man",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.13219359528415908?alt=media&token=9a0d146c-e6df-472c-84dc-f455a9e45000",
       "lessonsLearned": "Color",
@@ -110,10 +102,18 @@
     {
       "userId": 1,
       "categoryId": 1,
-      "name": "line",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.38084447330813376?alt=media&token=cd94257e-02c8-44b5-a125-7f6e797a41d2",
-      "lessonsLearned": "drawing",
-      "id": 20
+      "name": "Quick Sketch of a Guy's face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.1186202382978343?alt=media&token=628978ec-4296-4442-9198-1c9ea167208b",
+      "lessonsLearned": "I can't figure out how to properly make a natural blush, so I'll try that on my next sketch!",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "categoryId": 2,
+      "name": "No one wants to fight Tongue Man",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.7531474208881237?alt=media&token=b09971c2-a3d8-49b0-a945-62bd7d4ff566",
+      "lessonsLearned": "Don't drink and draw...no, DO drink and draw!",
+      "id": 22
     }
   ],
   "categories": [

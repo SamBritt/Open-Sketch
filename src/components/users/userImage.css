@@ -13,3 +13,8 @@
     font-size: 3em;
     text-decoration: none;
 }
+.fullCard{
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
