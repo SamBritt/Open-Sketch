@@ -34,6 +34,11 @@
       "userName": "Sagora Mentotum",
       "password": "lkjlkjh55",
       "id": 8
+    },
+    {
+      "userName": "Danny_Draws",
+      "password": "draw",
+      "id": 9
     }
   ],
   "friends": [
@@ -56,41 +61,14 @@
       "userId": 2,
       "currentUserId": 1,
       "id": 5
+    },
+    {
+      "userId": 2,
+      "currentUserId": 5,
+      "id": 6
     }
   ],
   "images": [
-    {
-      "userId": 6,
-      "categoryId": 2,
-      "name": "Quick Chest",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.19808073019660521?alt=media&token=e78cf52a-8e81-4629-8b60-2a68ef412293",
-      "lessonsLearned": "Not much yet",
-      "id": 7
-    },
-    {
-      "userId": 6,
-      "categoryId": 1,
-      "name": "Face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.10925139940205364?alt=media&token=b7023396-b1a2-40f5-a62a-769de42f3f3c",
-      "lessonsLearned": "Nothing",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "categoryId": 2,
-      "name": "Chicken Head",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.02151050490726858?alt=media&token=7880f909-5e7f-41ff-9120-b20b1c52714f",
-      "lessonsLearned": "Buff chicken Man",
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "categoryId": 2,
-      "name": "Cloaked Man",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.13219359528415908?alt=media&token=9a0d146c-e6df-472c-84dc-f455a9e45000",
-      "lessonsLearned": "Color",
-      "id": 18
-    },
     {
       "userId": 1,
       "categoryId": 1,
@@ -114,6 +92,62 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.7531474208881237?alt=media&token=b09971c2-a3d8-49b0-a945-62bd7d4ff566",
       "lessonsLearned": "Don't drink and draw...no, DO drink and draw!",
       "id": 22
+    },
+    {
+      "userId": 1,
+      "categoryId": 4,
+      "name": "Floating Cube",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.10625709005627071?alt=media&token=3941d582-07f1-44a6-8a23-631cee645ad8",
+      "lessonsLearned": "Tried to make the cube's color contrast appropriately with the cool background, but I feel like I haven't quite balanced its balance with hues.",
+      "id": 28
+    },
+    {
+      "userId": 2,
+      "categoryId": 6,
+      "name": "Pew Pew",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6825202819436207?alt=media&token=ba6decc5-4541-4cc5-b41a-e344c524b26c",
+      "lessonsLearned": "Interesting concept!",
+      "id": 29
+    },
+    {
+      "userId": 2,
+      "categoryId": 7,
+      "name": "Batman's Face",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6063829070072599?alt=media&token=9651cbe7-7c7e-427d-9162-247d96f1e201",
+      "lessonsLearned": "I actually remember how to draw Batman",
+      "id": 30
+    },
+    {
+      "userId": 6,
+      "categoryId": 1,
+      "name": "Just some random eyeball",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.6781368226144682?alt=media&token=81cecbfd-47b6-45ae-9b6e-4620c172342e",
+      "lessonsLearned": "I'm loving the blending. Could use more highlights.",
+      "id": 31
+    },
+    {
+      "userId": 6,
+      "categoryId": 2,
+      "name": "Care to take a dance?",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.981954800747431?alt=media&token=aae80353-89f4-488c-8ebc-b2ef9372d34d",
+      "lessonsLearned": "Testing out gesture for wedding drawing",
+      "id": 32
+    },
+    {
+      "userId": 5,
+      "categoryId": 1,
+      "name": "'Chu lookin' at?",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.22483202638466593?alt=media&token=89d91223-12f7-47af-8a83-a93babfa6a4c",
+      "lessonsLearned": "Practice them ears, man!",
+      "id": 33
+    },
+    {
+      "userId": 9,
+      "categoryId": 8,
+      "name": "Frisbee Head",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9006516338937489?alt=media&token=a2c6b26a-b7e2-4fdf-8d01-2fa0adbef6a9",
+      "lessonsLearned": "Work on that perspective",
+      "id": 34
     }
   ],
   "categories": [
@@ -128,6 +162,26 @@
     {
       "id": 3,
       "categoryName": "Feet"
+    },
+    {
+      "categoryName": "shapes",
+      "id": 4
+    },
+    {
+      "categoryName": "Food",
+      "id": 5
+    },
+    {
+      "categoryName": "Space Ship",
+      "id": 6
+    },
+    {
+      "categoryName": "Super Hero",
+      "id": 7
+    },
+    {
+      "categoryName": "Cartoon",
+      "id": 8
     }
   ]
 }

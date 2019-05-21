@@ -198,9 +198,25 @@ export default class ApplicationViews extends Component {
             })
     }
 
+    addCategory = (newCategory) => {
+
+
+        console.log(newCategory)
+
+        return ApiManager.postEntry(newCategory, "categories")
+            .then(() => ApiManager.getAll("categories", sessionStorage.getItem("userID")))
+            .then(categories => {
+                this.setState({
+                    categories: categories
+                })
+            })
+
+    }
+
     render() {
         return (
             <React.Fragment>
+
                 <Route exact path="/" render={props => {
                     return <Login users={this.state.users}
                         onLogin={this.onLogin}{...props} />
@@ -243,6 +259,7 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/sketch/new" render={props => {
                     return <Canvas images={this.state.images}
                         categories={this.state.categories}
+                        addCategory={this.addCategory}
                         saveDrawing={this.saveDrawing}
                         saveDrawing2={this.saveDrawing2}
                         deleteDrawing={this.deleteDrawing}{...props} />

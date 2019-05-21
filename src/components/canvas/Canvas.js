@@ -43,7 +43,7 @@ export default class Canvas extends Component {
                         <div className="tile">
                             <div className="tile is-parent is-vertical">
                                 <article className="tile is-child notification">
-                                    <div className = "slider-wrapper">
+                                    <div className="slider-wrapper">
                                         <label>Brush-Radius:</label>
                                         <input className="slider is-fullwidth"
                                             step="1"
@@ -87,7 +87,16 @@ export default class Canvas extends Component {
                 </div>
                 <div id="buttflex">
                     <button className="center-it button is-rounded is-primary" onClick={this.loadSaveForm}>Complete</button>
-                    {this.state.showSaveForm ? <CanvasSaveForm saveDrawing2={this.saveDrawing2} saveDrawing={this.saveDrawing} categories={this.props.categories}{...this.props} /> : null}
+                    {this.state.showSaveForm
+                        ?
+                        <CanvasSaveForm
+                            saveDrawing2={this.saveDrawing2}
+                            saveDrawing={this.saveDrawing}
+                            categories={this.props.categories}
+                            addCategory={this.addCategory}
+                            {...this.props} />
+                        :
+                        null}
                 </div>
             </React.Fragment>
         )

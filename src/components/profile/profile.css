@@ -1,22 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-#root{
-  font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  background-color: #2b2c2b;
-  margin: 0;
-  padding: 0; 
-}
-html{
-  height: 100vh;
 
-}
 .wrapper{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   margin: 1em 0.5em 1em 0.5em;
 }
+
 
 .card {
     /* Add shadows to create the "card" effect */

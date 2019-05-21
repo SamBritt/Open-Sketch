@@ -4,11 +4,11 @@ import UserProfile from '../users/UserProfile'
 
 export default class Profile extends Component {
     render() {
+        console.log(sessionStorage.getItem("userName"))
         console.log(this.props.match.params)
         return (
             <React.Fragment>
                 {
-
                     this.props.match.params.userName === sessionStorage.getItem("userName") ?
                         <CurrentUserProfile
                             images={this.props.images}
