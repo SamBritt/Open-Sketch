@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './canvasSave.css'
+import bulmaTagsInput from 'bulma-extensions/bulma-tagsinput/dist/js/bulma-tagsinput'
+
 
 export default class CanvasSaveForm extends Component {
 
@@ -8,7 +10,8 @@ export default class CanvasSaveForm extends Component {
         lessonsLearned: "",
         categoryId: "",
         imageUrl: "",
-        userId: ""
+        userId: "",
+        categoryToAdd: ""
     }
 
     handleFieldChange = (event) => {
@@ -24,10 +27,21 @@ export default class CanvasSaveForm extends Component {
         this.props.history.push(`/profile/${sessionStorage.getItem("userName")}`)
 
     }
+    handleAddCategory = (event) => {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            if (event.target.value !== "") {
+                const category = {
+                    categoryName: event.target.value
+                }
+
+                this.props.addCategory(category)
+            }
+        }
+    }
 
 
     render() {
-        console.log(this.props)
         return (
             <React.Fragment>
                 <div className="container">
@@ -51,6 +65,21 @@ export default class CanvasSaveForm extends Component {
                                     required
                                     onChange={this.handleFieldChange} />
                             </div>
+                        </div>
+                        <div className="field">
+                            <label className="label" htmlFor="categoryInput">Categories: </label>
+                            <div className="control">
+                                <input className="input"
+                                    placeholder="Tag: "
+                                    onKeyUp={this.handleAddCategory}
+                                    type="text"
+                                    id="categorToAdd"
+                                />
+                                {
+
+                                }
+                            </div>
+
                         </div>
                         <div className="field">
                             <label className="label" htmlFor="categoryInput">Category: </label>

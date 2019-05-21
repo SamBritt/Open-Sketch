@@ -30,11 +30,12 @@ export default class UserProfile extends Component {
         let imagesToRender = this.props.users ?
             this.props.usersImages.filter(user =>
                 this.props.match.params.userName === user.userName
-            ).map(user => user.images.filter(image =>
-                image.name.toLowerCase().includes(
+            ).map(user => user.images.filter(image => {
+                return image.name.toLowerCase().includes(
                     this.state.searchString.toLowerCase()
                 )
-            )) : []
+                
+            })) : []
 
         console.log(imagesToRender)
         return (
