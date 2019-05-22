@@ -48,16 +48,6 @@
       "currentUserId": 2
     },
     {
-      "userId": 5,
-      "currentUserId": 1,
-      "id": 3
-    },
-    {
-      "userId": 6,
-      "currentUserId": 1,
-      "id": 4
-    },
-    {
       "userId": 2,
       "currentUserId": 1,
       "id": 5
@@ -66,17 +56,14 @@
       "userId": 2,
       "currentUserId": 5,
       "id": 6
+    },
+    {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 7
     }
   ],
   "images": [
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "weird face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3933075993920523?alt=media&token=a771b093-ddaf-4fee-8ee0-b81cad3e72a9",
-      "lessonsLearned": "weird",
-      "id": 19
-    },
     {
       "userId": 1,
       "categoryId": 1,
@@ -148,6 +135,14 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9006516338937489?alt=media&token=a2c6b26a-b7e2-4fdf-8d01-2fa0adbef6a9",
       "lessonsLearned": "Work on that perspective",
       "id": 34
+    },
+    {
+      "userId": 1,
+      "categoryId": 1,
+      "name": "Happy Man",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.43663246166482117?alt=media&token=ed05935e-f454-48cd-99c8-f2deddcb229c",
+      "lessonsLearned": "No",
+      "id": 35
     }
   ],
   "categories": [
