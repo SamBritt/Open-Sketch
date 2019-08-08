@@ -7,7 +7,6 @@ export default class FriendsList extends Component {
 
     handleRemoveFriend = (event) => {
         event.preventDefault();
-        console.log(event.target.id)
         this.props.removeFriend(event.target.id)
 
     }

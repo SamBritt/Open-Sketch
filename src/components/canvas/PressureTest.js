@@ -14,14 +14,6 @@ class MyGreatComponent extends Component {
     }
     addBrushSize = () => {
         let force = this.props.force
-
-        // let brushRadius = this.state.brushRadius
-
-        // if(this.props.pressing){
-        //    this.state.brushRadius = (force * 1.1)
-        //     console.log(this.state.brushRadius)
-        // }
-        
             let rgb = parseInt(this.state.brushColor)
             let thergb = "rgb(" + 0 + "," + 0 + "," + 0 + "," + force + ")";
             this.state.brushColor = thergb

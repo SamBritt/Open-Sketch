@@ -4,18 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import './nav.css'
 
 class NavBar extends Component {
-    state = {
-        currentUser: ""
-    }
-    componentDidMount() { 
-        let currentUser = sessionStorage.getItem("userName")
-        this.setState({ currentUser: currentUser })
-    }
-
-    
 
     render() {
-        console.log(this.state.currentUser)
+        console.log("Logging...",this.props.currentUser)
         
         return (
             <nav className="pt-2 main-nav flex-md-nowrap shadow">
@@ -24,7 +15,7 @@ class NavBar extends Component {
                         <Link to="/home">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={`/profile/${this.state.currentUser}`}>Profile</Link>
+                        <Link to={`/profile/${this.props.currentUser}`}>Profile</Link>
 
                     </li>
                     <li className="nav-item">
