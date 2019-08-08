@@ -24,7 +24,6 @@ export default class ApplicationViews extends Component {
     }
     componentDidMount() {
         let currentUserId = sessionStorage.getItem("userID")
-        let currentUserName = sessionStorage.getItem("userName")
         this.loadAllData(currentUserId)
     }
 
@@ -64,6 +63,7 @@ export default class ApplicationViews extends Component {
             userId: sessionStorage.getItem("userID"),
             userName: sessionStorage.getItem("userName")
         })
+        this.props.refreshUser();
         this.loadAllData(this.state.userId)
     }
     registerUser = (userToRegister) => {
@@ -121,10 +121,10 @@ export default class ApplicationViews extends Component {
             const uploadTask = storage.ref(`images/${rand}`).put(blob)
             uploadTask.on("state_changed",
                 (snapshot) => {
-                    console.log(snapshot)
+                    
                 },
                 (error) => {
-                    console.log(error)
+                    
                 },
                 () => {
                     //Creates a new object used to post to our local JSON server.
@@ -176,7 +176,7 @@ export default class ApplicationViews extends Component {
             return ApiManager.deleteEntry("images", id)
                 .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
                 .then(images => {
-                    console.log(images)
+                    
                     //Updates state with images minus the one deleted
                     newObj.images = images
                     // this.setState({ images: images })

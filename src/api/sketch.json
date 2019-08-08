@@ -48,35 +48,17 @@
       "currentUserId": 2
     },
     {
-      "userId": 5,
-      "currentUserId": 1,
-      "id": 3
+      "userId": 2,
+      "currentUserId": 5,
+      "id": 6
     },
     {
       "userId": 6,
       "currentUserId": 1,
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "currentUserId": 1,
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "currentUserId": 5,
-      "id": 6
+      "id": 8
     }
   ],
   "images": [
-    {
-      "userId": 1,
-      "categoryId": 1,
-      "name": "weird face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3933075993920523?alt=media&token=a771b093-ddaf-4fee-8ee0-b81cad3e72a9",
-      "lessonsLearned": "weird",
-      "id": 19
-    },
     {
       "userId": 1,
       "categoryId": 1,
@@ -87,7 +69,7 @@
     },
     {
       "userId": 1,
-      "categoryId": 2,
+      "categoryId": 4,
       "name": "No one wants to fight Tongue Man",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.7531474208881237?alt=media&token=b09971c2-a3d8-49b0-a945-62bd7d4ff566",
       "lessonsLearned": "Don't drink and draw...no, DO drink and draw!",
@@ -148,6 +130,22 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9006516338937489?alt=media&token=a2c6b26a-b7e2-4fdf-8d01-2fa0adbef6a9",
       "lessonsLearned": "Work on that perspective",
       "id": 34
+    },
+    {
+      "userId": 1,
+      "categoryId": 1,
+      "name": "Happy Man",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.43663246166482117?alt=media&token=ed05935e-f454-48cd-99c8-f2deddcb229c",
+      "lessonsLearned": "No",
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "categoryId": 4,
+      "name": "Color",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.22288578070083798?alt=media&token=5d361151-c75d-44e3-91e9-d6eb73e82efa",
+      "lessonsLearned": "Nothing",
+      "id": 36
     }
   ],
   "categories": [
@@ -182,6 +180,10 @@
     {
       "categoryName": "Cartoon",
       "id": 8
+    },
+    {
+      "categoryName": "Line Drawing",
+      "id": 9
     }
   ]
 }
