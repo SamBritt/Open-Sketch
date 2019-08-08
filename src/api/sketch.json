@@ -49,18 +49,13 @@
     },
     {
       "userId": 2,
-      "currentUserId": 1,
-      "id": 5
-    },
-    {
-      "userId": 2,
       "currentUserId": 5,
       "id": 6
     },
     {
-      "userId": 5,
+      "userId": 6,
       "currentUserId": 1,
-      "id": 7
+      "id": 8
     }
   ],
   "images": [
@@ -74,7 +69,7 @@
     },
     {
       "userId": 1,
-      "categoryId": 2,
+      "categoryId": 4,
       "name": "No one wants to fight Tongue Man",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.7531474208881237?alt=media&token=b09971c2-a3d8-49b0-a945-62bd7d4ff566",
       "lessonsLearned": "Don't drink and draw...no, DO drink and draw!",
@@ -143,6 +138,14 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.43663246166482117?alt=media&token=ed05935e-f454-48cd-99c8-f2deddcb229c",
       "lessonsLearned": "No",
       "id": 35
+    },
+    {
+      "userId": 1,
+      "categoryId": 4,
+      "name": "Color",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.22288578070083798?alt=media&token=5d361151-c75d-44e3-91e9-d6eb73e82efa",
+      "lessonsLearned": "Nothing",
+      "id": 36
     }
   ],
   "categories": [
@@ -177,6 +180,10 @@
     {
       "categoryName": "Cartoon",
       "id": 8
+    },
+    {
+      "categoryName": "Line Drawing",
+      "id": 9
     }
   ]
 }

@@ -6,12 +6,20 @@ import './openSketch.css'
 
 
 class OpenSketch extends Component {
+    state = {
+        currentUser: sessionStorage.getItem("userName")
+    }
+    refreshUser = () => {
+        let currentUser = sessionStorage.getItem("userName");
+        this.setState({currentUser: currentUser})
+    }
     render() {
         return (
             <React.Fragment>
                 
-                    <Nav />
-                    <ApplicationViews />
+                    <Nav currentUser = {this.state.currentUser}
+                    />
+                    <ApplicationViews refreshUser = {this.refreshUser}/>
               
             </React.Fragment>
         )
