@@ -72,14 +72,6 @@
     {
       "userId": 1,
       "categoryId": 1,
-      "name": "weird face",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.3933075993920523?alt=media&token=a771b093-ddaf-4fee-8ee0-b81cad3e72a9",
-      "lessonsLearned": "weird",
-      "id": 19
-    },
-    {
-      "userId": 1,
-      "categoryId": 1,
       "name": "Quick Sketch of a Guy's face",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.1186202382978343?alt=media&token=628978ec-4296-4442-9198-1c9ea167208b",
       "lessonsLearned": "I can't figure out how to properly make a natural blush, so I'll try that on my next sketch!",
@@ -148,6 +140,14 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.9006516338937489?alt=media&token=a2c6b26a-b7e2-4fdf-8d01-2fa0adbef6a9",
       "lessonsLearned": "Work on that perspective",
       "id": 34
+    },
+    {
+      "userId": 1,
+      "categoryId": 1,
+      "name": "Eyeballs",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.2385238830672587?alt=media&token=c0760798-68d3-457f-9ed3-17a8a95e58c5",
+      "lessonsLearned": "",
+      "id": 35
     }
   ],
   "categories": [
