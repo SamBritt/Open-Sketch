@@ -53,14 +53,14 @@
       "id": 6
     },
     {
-      "userId": 5,
-      "currentUserId": 1,
-      "id": 7
-    },
-    {
       "userId": 2,
       "currentUserId": 1,
       "id": 8
+    },
+    {
+      "userId": 5,
+      "currentUserId": 1,
+      "id": 9
     }
   ],
   "images": [
@@ -159,14 +159,6 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8447450966662131?alt=media&token=3ba6765f-4a3a-412f-8023-9a847b5f4b48",
       "lessonsLearned": "",
       "id": 38
-    },
-    {
-      "userId": 1,
-      "categoryId": 12,
-      "name": "Pentagram",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.25395387180403217?alt=media&token=2896c1a2-bca5-4389-aa75-a2c86edcd2ac",
-      "lessonsLearned": "Demons are not for me",
-      "id": 39
     }
   ],
   "categories": [
@@ -217,6 +209,10 @@
     {
       "categoryName": "Demons",
       "id": 12
+    },
+    {
+      "categoryName": "Random Colors",
+      "id": 13
     }
   ]
 }
