@@ -15,4 +15,15 @@ npm i bulma-extensions
 npm i react-canvas-draw
 npm i react-color-picker
 ``` 
-
+## Running Open Sketch
+1. Once you have downloaded all the necessary packages/dependencies you'll need two bash windows open
+2. In one window in the root directory, run
+```
+npm start
+```
+3. In the second window `cd` into `src/api`
+4. Execute json-server with the following:
+```
+json-server -p 8088 -w sketch.json
+```
+5. Start poking around at Open Sketch! Navigate to your profile and hit `Create Sketch`
