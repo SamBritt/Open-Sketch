@@ -159,6 +159,14 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.8447450966662131?alt=media&token=3ba6765f-4a3a-412f-8023-9a847b5f4b48",
       "lessonsLearned": "",
       "id": 38
+    },
+    {
+      "userId": 2,
+      "categoryId": 0,
+      "name": "",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.25595444942266976?alt=media&token=6c6eded0-7d9b-44aa-b7e8-b0e72f8909e7",
+      "lessonsLearned": "",
+      "id": 39
     }
   ],
   "categories": [
