@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Chilanka&display=swap');
+
+
+.center{
+    margin-top: 50px;
+}
+header h1{
+    letter-spacing: 1px;
+    font-family: 'Chilanka', cursive;
+}
+header{
+    color: whitesmoke;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 50px;
+}
+header p{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+form{
+    width: 500px;
+}
+footer button{
+    margin-right: 20px;
+    margin-left: 20px;
+}
