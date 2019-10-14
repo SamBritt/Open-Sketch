@@ -74,8 +74,6 @@ export default class UserProfile extends Component {
                                                 imagesToRender.map(image => {
                                                     return image.map(e => {
 
-                                                        console.log(e.name)
-                                                        console.log("true")
                                                         return <UserImageCard key={e.id} name={e.name} lessonsLearned={e.lessonsLearned} imageUrl={e.imageUrl} />
                                                     })
                                                 }

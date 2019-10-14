@@ -180,22 +180,6 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.2810587313489137?alt=media&token=5de73d58-f46d-4650-9ebe-477cdbc64764",
       "lessonsLearned": "Could work on this concept, although it's very basic.",
       "id": 40
-    },
-    {
-      "userId": 1,
-      "categoryId": 0,
-      "name": "Weird shape",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.20991698678582993?alt=media&token=5996adf3-a8b7-4779-af49-7dafed2747cb",
-      "lessonsLearned": "",
-      "id": 41
-    },
-    {
-      "userId": 1,
-      "categoryId": 15,
-      "name": "Lines",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.055290980397940004?alt=media&token=c0737502-cc92-4022-9328-cc44179fb3f9",
-      "lessonsLearned": "",
-      "id": 42
     }
   ],
   "categories": [
@@ -258,6 +242,10 @@
     {
       "categoryName": "Lines",
       "id": 15
+    },
+    {
+      "categoryName": "Color",
+      "id": 16
     }
   ]
 }
