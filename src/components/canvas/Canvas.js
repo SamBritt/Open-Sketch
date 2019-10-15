@@ -22,16 +22,16 @@ export default class Canvas extends Component {
     }
 
     handleChange = (color) => {
-        console.log(color.rgb)
+        
         let colorValues = Object.values(color.rgb)
         let colorStr = `rgba(`
 
         colorValues = colorValues.join(',')
         colorStr += colorValues
         colorStr += `)`
-        console.log(colorStr)
+        
         this.setState({ brushColor: colorStr });
-        console.log(this.state.brushColor)
+        
     };
 
 

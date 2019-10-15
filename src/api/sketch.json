@@ -182,20 +182,28 @@
       "id": 40
     },
     {
-      "userId": 1,
+      "userId": 2,
       "categoryId": 0,
-      "name": "Weird shape",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.20991698678582993?alt=media&token=5996adf3-a8b7-4779-af49-7dafed2747cb",
+      "name": "Happy",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.46313975141733543?alt=media&token=62c1e138-e80c-47b8-8368-741394b8a412",
       "lessonsLearned": "",
       "id": 41
     },
     {
-      "userId": 1,
-      "categoryId": 15,
-      "name": "Lines",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.055290980397940004?alt=media&token=c0737502-cc92-4022-9328-cc44179fb3f9",
+      "userId": 2,
+      "categoryId": 0,
+      "name": "Fire",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.44895947593224617?alt=media&token=acd15c3f-05f4-4ac4-b5ec-5ec4b1dc4301",
       "lessonsLearned": "",
       "id": 42
+    },
+    {
+      "userId": 2,
+      "categoryId": 17,
+      "name": "Window In The Ocean",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.451470010347208?alt=media&token=e98dce32-c00e-451f-a739-8114faa92391",
+      "lessonsLearned": "Work those colors",
+      "id": 43
     }
   ],
   "categories": [
@@ -258,6 +266,14 @@
     {
       "categoryName": "Lines",
       "id": 15
+    },
+    {
+      "categoryName": "Color",
+      "id": 16
+    },
+    {
+      "categoryName": "Underwater",
+      "id": 17
     }
   ]
 }

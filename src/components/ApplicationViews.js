@@ -185,7 +185,7 @@ export default class ApplicationViews extends Component {
                 .then(response => newObj.usersImages = response)
                 .then(() => this.setState(newObj))
         }).catch((error) => {
-            console.log(error)
+            
         })
     }
     updateDrawing = (imageToUpdate) => {
@@ -201,7 +201,7 @@ export default class ApplicationViews extends Component {
     addCategory = (newCategory) => {
 
 
-        console.log(newCategory)
+        
 
         return ApiManager.postEntry(newCategory, "categories")
             .then(() => ApiManager.getAll("categories", sessionStorage.getItem("userID")))
