@@ -16,7 +16,8 @@ export default class CurrentUserProfile extends Component {
 
     state = {
         isOpen: false,
-        imageClicked: ""
+        imageClicked: "",
+        columns: 4
     }
 
     handleDelete = (event) => {
@@ -39,24 +40,28 @@ export default class CurrentUserProfile extends Component {
         })
         return fade;
     }
+    setColumns = e => this.setState({ columns: parseInt(e.key) })
     render() {
         return (
             <React.Fragment>
+
                 <div className="profileWrapper">
                     <h1 className="title is-1">{sessionStorage.getItem("userName")}</h1>
                     <button className="center-it button is-rounded is-primary" onClick={() => this.props.history.push("/sketch/new")}>Create New Sketch</button>
                 </div>
+
                 <div className="wrapper">
                     <Grid className="grid"
                         data={this.props.images}
-                        height = {100}
                         keys={e => e.id}
                         columns={4}
-                        heights={200}
+                        heights={400}
                         margin={70}
                         closeDelay={400}>
                         {(data, maximized, toggle) => (
                             <Cell {...data}
+                                width = {(props) => props.width}
+                                setColumns={this.setColumns}
                                 history={this.props.history}
                                 handleDelete={this.handleDelete}
                                 maximized={maximized}

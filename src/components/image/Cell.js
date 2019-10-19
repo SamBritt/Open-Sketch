@@ -1,10 +1,10 @@
 import React from 'react'
 import { Grid, Slug, Fade } from 'mauerwerk'
 
-const Cell = ({ toggle, name, height, maximized, handleDelete, imageUrl, id, history}) => (
+const Cell = ({ width, toggle, name, height, maximized, handleDelete, imageUrl, id, history, setColumns, columns}) => (
     <div
         className="cell"
-        style={{backgroundImage: `url(${imageUrl})`, cursor: !maximized ? 'pointer' : 'auto' }}
+        style={{backgroundImage: `url(${imageUrl})`, cursor: !maximized ? 'pointer' : 'auto'}}
         onClick={!maximized ? toggle : undefined}>
         <Fade show={maximized} delay={maximized ? 400 : 0}>
             <div className="details">

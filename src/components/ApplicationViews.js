@@ -120,12 +120,8 @@ export default class ApplicationViews extends Component {
             //Stores image to firebase
             const uploadTask = storage.ref(`images/${rand}`).put(blob)
             uploadTask.on("state_changed",
-                (snapshot) => {
-                    
-                },
-                (error) => {
-                    
-                },
+                (snapshot) => {},
+                (error) => {},
                 () => {
                     //Creates a new object used to post to our local JSON server.
                     //Uses url returned from posting to Firebase
@@ -137,7 +133,6 @@ export default class ApplicationViews extends Component {
                             name: name,
                             imageUrl: url,
                             lessonsLearned: lessonsLearned
-
                         }
                         //Call to post to JSON
                         this.saveDrawing2(newObj)
@@ -146,17 +141,13 @@ export default class ApplicationViews extends Component {
             )
         })
     }
-    saveDrawing2 = (newDrawing) => {
-        const newObj = {
 
-        }
+    saveDrawing2 = (newDrawing) => {
+        const newObj = {}
 
         return ApiManager.postEntry(newDrawing, "images")
             .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
             .then(images => {
-                // this.setState({
-                //     images: images
-                // })
                 newObj.images = images
             })
             .then(() => ApiManager.getAllUsersImages())
@@ -167,16 +158,13 @@ export default class ApplicationViews extends Component {
     deleteDrawing = (imgUrl, id) => {
         //Gets JSON image URL and id passed from mapping over list of images in Profile.js
         const imageRef = storage.refFromURL(imgUrl)
-        const newObj = {
-
-        }
+        const newObj = {}
         //Deletes Firebase file in Storage
         imageRef.delete().then(() => {
             //Then deletes JSON Object containing that URL.
             return ApiManager.deleteEntry("images", id)
                 .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
-                .then(images => {
-                    
+                .then(images => {              
                     //Updates state with images minus the one deleted
                     newObj.images = images
                     // this.setState({ images: images })
@@ -184,10 +172,9 @@ export default class ApplicationViews extends Component {
                 .then(() => ApiManager.getAllUsersImages())
                 .then(response => newObj.usersImages = response)
                 .then(() => this.setState(newObj))
-        }).catch((error) => {
-            
-        })
+        }).catch((error) => {})
     }
+
     updateDrawing = (imageToUpdate) => {
         return ApiManager.updateEntry(imageToUpdate, "images")
             .then(() => ApiManager.getAll("images", sessionStorage.getItem("userID")))
@@ -199,10 +186,6 @@ export default class ApplicationViews extends Component {
     }
 
     addCategory = (newCategory) => {
-
-
-        
-
         return ApiManager.postEntry(newCategory, "categories")
             .then(() => ApiManager.getAll("categories", sessionStorage.getItem("userID")))
             .then(categories => {
@@ -210,7 +193,6 @@ export default class ApplicationViews extends Component {
                     categories: categories
                 })
             })
-
     }
 
     render() {

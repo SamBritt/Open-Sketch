@@ -39,6 +39,11 @@
       "userName": "Danny_Draws",
       "password": "draw",
       "id": 9
+    },
+    {
+      "userName": "LerrySketchet",
+      "password": "lkjlkjh55",
+      "id": 10
     }
   ],
   "friends": [
@@ -180,22 +185,6 @@
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.2810587313489137?alt=media&token=5de73d58-f46d-4650-9ebe-477cdbc64764",
       "lessonsLearned": "Could work on this concept, although it's very basic.",
       "id": 40
-    },
-    {
-      "userId": 2,
-      "categoryId": 0,
-      "name": "Happy",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.46313975141733543?alt=media&token=62c1e138-e80c-47b8-8368-741394b8a412",
-      "lessonsLearned": "",
-      "id": 41
-    },
-    {
-      "userId": 2,
-      "categoryId": 0,
-      "name": "Fire",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/open-sketch.appspot.com/o/images%2F0.44895947593224617?alt=media&token=acd15c3f-05f4-4ac4-b5ec-5ec4b1dc4301",
-      "lessonsLearned": "",
-      "id": 42
     },
     {
       "userId": 2,
