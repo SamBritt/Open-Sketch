@@ -17,7 +17,7 @@ export default class CurrentUserProfile extends Component {
     state = {
         isOpen: false,
         imageClicked: "",
-        columns: 4
+        columns: 3
     }
 
     handleDelete = (event) => {
@@ -54,9 +54,9 @@ export default class CurrentUserProfile extends Component {
                     <Grid className="grid"
                         data={this.props.images}
                         keys={e => e.id}
-                        columns={4}
+                        columns={this.state.columns}
                         heights={400}
-                        margin={70}
+                        margin = {10}
                         closeDelay={400}>
                         {(data, maximized, toggle) => (
                             <Cell {...data}
