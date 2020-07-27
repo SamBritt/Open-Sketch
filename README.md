@@ -26,4 +26,7 @@ npm start
 ```
 json-server -p 8088 -w sketch.json
 ```
-5. Start poking around at Open Sketch! Navigate to your profile and hit `Create Sketch`
+5. Login: JackDraws
+   Password: admin
+
+6. Start poking around at Open Sketch! Navigate to your profile and hit `Create Sketch`
